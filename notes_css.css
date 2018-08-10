@@ -23,7 +23,14 @@ a:hover{color: #61afef; text-decoration: underline;}
 h2{
   margin-top: 30px;
 }
-
+details{margin-left: 70px;}
+summary{
+  text-align: right;
+  padding-right: 50px;
+  font-size: 18px;
+  color: #999;
+}
+summary:hover{color: #ffc;}
 .prop{color: #d19a66; font-weight: bold;}
 .var {color: #abb2bf;}
 .val {color: #98c36e;}
