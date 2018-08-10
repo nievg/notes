@@ -1,0 +1,36 @@
+*{  margin: 0; padding:0;}
+
+body{
+  background: #282c34;
+  color: #ddd;
+  font-family: Consolas, sans-serif;
+  margin-left: 30px;
+}
+p{
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 24px;
+  color:#abb2bf;
+}
+li{
+  margin-top: 2px;
+  margin-left: 80px;
+  font-size: 24px;
+  color:#abb2bf;
+}
+a{color: #56b6c2; text-decoration: none;}
+a:hover{color: #61afef; text-decoration: underline;}
+h2{
+  margin-top: 30px;
+}
+
+.prop{color: #d19a66; font-weight: bold;}
+.var {color: #abb2bf;}
+.val {color: #98c36e;}
+.eq  {color: #e5c07b;}
+.htm {color: #e06c75;}
+.fnc {color: #56b6c2;}
+.kw  {color: #c678dd;}
+
+.org {color: #e5c07b;}
+.blu {color: #61afef;}
