@@ -9,19 +9,52 @@
 </head>
 <body>
   <h1>Blender notes</h1>
+
+
+  <details >
+    <summary>Легенда</summary>
+    <p>С <span class="htm">червено</span> са означени действията с <span class="htm">мишката</span></p>
+    <p>С <span class="org">жълто</span> е означен натиснат <span class="org">клавиш</span> </p>
+    <p>Със <span class="val">зелено</span> е означен <span class="val">елемент на интерфейса</span> </p>
+    <p><span class="htm">MRClick</span> - щракване с десния бутон на мишката</p>
+    <p><span class="htm">MLClick</span> - щракване с левия бутон на мишката</p>
+    <p><span class="htm">MLDrag</span> - влачене с левия бутон на мишката</p>
+    <p><span class="htm">MRDrag</span> - влачене с десния бутон на мишката</p>
+    <p><span class="htm">MWDown</span> - натискане и задържане колелцето на мишката</p>
+    <p><span class="htm">MWDrag</span> - влачене с колелцето на мишката</p>
+    <p><span class="htm">MWScrooling</span> - въртене на колелцето на мишката</p>
+    <p><span class="htm">MMove</span> - местене на мишката</p>
+    <p><a href="https://www.youtube.com/watch?v=3Ij2wP81o_w&index=5&list=PL0lO_mIqDDFW5h4vGzizQDcsqK3nxjvy_" target="_blank">
+       <span class="blu">Blender 3D моделирование</span></a>
+       - видео курс за моделиране с Blender от
+       <a href="https://www.youtube.com/channel/UCvuY904el7JvBlPbdqbfguw " target="_blank">
+       <span class="fnc">Гоша Дударь</span></a>
+    </p>
+  </details>
+
+
+
   <h2>Премесване в пространството</h2>
   <p>
-    <span class="org">Mouse Wheel scrolling up/down</span>
-    - zoom in/out
-  </p>
+    <span class="htm">MWScrolling</span> up/down
+    - zoom in/out</p>
   <p>
-    <span class="org">Mouse Wheel down</span>
-    - завъртане на изгледа около точката на вмъкване
-  </p>
+    <span class="htm">MWDrag</span>
+    - завъртане на изгледа около точката на вмъкване</p>
   <p>
-    <span class="org">Shift</span> + <span class="org">Mouse Wheel down</span>
-    - преместване в равнината на екрана
-  </p>
+    <span class="org">Shift</span> + <span class="htm">MWDown</span>
+    - преместване в равнината на екрана</p>
+  <p>
+    <span class="org">Shift</span> + <span class="htm">MWDown</span>
+    - премества изгледа нагоре/надолу</p>
+  <p>
+    <span class="org">Ctrl</span> + <span class="htm">MWDown</span>
+    - премества изгледа наляво/надясно</p>
+
+  <h2>Комбинации</h2>
+  <p><span class="org">Shift</span> + <span class="org">D</span>
+     - дублира обекта</p>
+  <p><span class="htm">MRDrag</span> - премества обекта в пространството</p>
 
   <h2>Интерфейсни клавишни комбинации</h2>
   <p>
@@ -39,10 +72,10 @@
     - отваря контекстно меню за избор на обекти
   </p>
   <p>
-    От таб <span class="org">Create</span> в левия панел
+    От таб <span class="val">Create</span> в левия панел
   </p>
   <p>
-    От бутон <span class="org">Add</span>
+    От бутон <span class="val">Add</span>
     - трети в лентата над таймлайна (долу в ляво)
   </p>
 
@@ -51,19 +84,89 @@
 
 
   <h2>Режим за редактиране на обекти</h2>
+
   <p>
     <span class="org">S</span>
-    - sizing преоразмеряване на обекта
-  </p>
+    - scaling преоразмеряване на обекта</p>
   <p>
     <span class="org">R</span>
-    - rotating завъртане на обекта
-  </p>
+    - rotating завъртане на обекта</p>
+  <p>
+    <span class="org">G</span>
+    - премества обекта в пространството като <span class="htm">MRDrag</span></p>
+
 
   <h2>Режим на редактиране</h2>
   <p>
-    <span class="org">tab</span>
+    <span class="org">Tab</span>
     - влиза/излиза в режим на редактиране
   </p>
+  <p>
+    Бутон <span class="val">Vertex select</span>
+    - избира връх чрез <span class="htm">MRClick</span>
+    или върхове чрез <span class="org">Shift</span>
+    + <span class="htm">MRClick</span>
+  </p>
+  <p>
+    Бутон <span class="val">Edge select</span>
+    - избира ръб чрез <span class="htm">MRClick</span>
+    или ръбове чрез <span class="org">Shift</span>
+    + <span class="htm">MRClick</span>
+  </p>
+  <p>
+    Бутон <span class="val">Face select</span>
+    - избира страна чрез <span class="htm">MRClick</span>
+    или страни чрез <span class="org">Shift</span>
+    + <span class="htm">MRClick</span>
+  </p>
+
+
+<h2>Създаване на допълнителна геометрия</h2>
+  <ol>
+    <li>Натискаш <span class="org">Tab</span> за да влезеш в режим редактиране на обект</li>
+    <li>Цъкаш на <span class="val">Face select</span> за да избираш страни</li>
+    <li><span class="htm">MRClick</span> върху страна за да я избереш</li>
+    <li>Натискаш <span class="org">E</span>
+        - режим екструдиране на избраната повърхност</li>
+    <li><span class="htm">MLDrag</span> или натискаш
+      <span class="org">2</span> (за куб със същите размери)</li>
+    <li>Натискаш <span class="htm">MLClick</span></li>
+  </ol>
+
+  <h2>Създаване на допълнителни върхове, ръбове и страни</h2>
+    <ol>
+      <li>Натискаш <span class="org">Tab</span> -  режим редактиране на обект</li>
+      <li>Цъкаш на <span class="val">Vertex</span>, <span class="val">Edge</span>
+          или <span class="val">Face select</span></li>
+      <li><span class="org">Ctrl</span> + <span class="org">R</span>
+          появява се <span class="vio">лилаво</span> сечение</li>
+      <li><span class="htm">MMove</span> избираш равнина на сечението</li>
+      <li><span class="htm">MWScroll</span> добавя успоредни сечения, равномерно
+      разделящи фигурата</li>
+      <li><span class="htm">MLClick</span>
+          сечението/сеченията става/т <span class="prop">оранжево/и</span></li>
+      <li><span class="htm">MMove</span> местиш мишка сечението/а където трябва</li>
+      <li><span class="htm">MLClick</span> финализира среза/овете или<br/>
+          <span class="htm">MRClick</span> центрира и финализира среза/овете</li>
+    </ol>
+
+  <h2>Разделяне на куб</h2>
+    <ol>
+      <li><span class="org">Tab</span> - влизаш в режим редактиране на обект</li>
+      <li>Превърташ до секцията <span class="val">Add</span></li>
+      <li>Избираш бутона <span class="val">Subdivide</span></li>
+      <li>Превърташ до полето <span class="val">Numbers of Cuts</span> и
+          пишеш броя на срезовете</li>
+    </ol>
+    <p>или</p>
+    <ol>
+      <li><span class="org">Tab</span> - влизаш в режим редактиране на обект</li>
+      <li>Натискаш <span class="org">W</span> - това отваря контекстно меню</li>
+      <li>Избираш опцията <span class="val">Subdivide</span></li>
+      <li>Избира се таб <span class="val">Tools</span> в левия панел</li>
+      <li>Превърташ до полето <span class="val">Numbers of Cuts</span> и
+          пишеш броя на срезовете</li>
+    </ol>
+
 </body>
 </html>
