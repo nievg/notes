@@ -24,6 +24,9 @@
     <p><span class="htm">MWDrag</span> - влачене с колелцето на мишката</p>
     <p><span class="htm">MWScrooling</span> - въртене на колелцето на мишката</p>
     <p><span class="htm">MMove</span> - местене на мишката</p>
+    <p><span class="htm">X</span> - абсциса</p>
+    <p><span class="val">Y</span> - ордината</p>
+    <p><span class="blu">Z</span> - апликата</p>
     <p><a href="https://www.youtube.com/watch?v=3Ij2wP81o_w&index=5&list=PL0lO_mIqDDFW5h4vGzizQDcsqK3nxjvy_" target="_blank">
        <span class="blu">Blender 3D моделирование</span></a>
        - видео курс за моделиране с Blender от
@@ -33,6 +36,17 @@
   </details>
 
 
+  <h2>Забележки</h2>
+  <p>Осите
+     <span class="htm">X</span>,
+     <span class="val">Y</span> и
+     <span class="blu">Z</span>
+    са оцветени в последователност
+    <span class="htm">R</span><span class="val">G</span><span class="blu">B</span>
+    (<span class="htm">red</span>
+    <span class="val">green</span>
+    <span class="blu">bluе</span>)
+  </p>
 
   <h2>Премесване в пространството</h2>
   <p>
@@ -51,22 +65,57 @@
     <span class="org">Ctrl</span> + <span class="htm">MWDown</span>
     - премества изгледа наляво/надясно</p>
 
-  <h2>Комбинации</h2>
-  <p><span class="org">Shift</span> + <span class="org">D</span>
-     - дублира обекта</p>
-  <p><span class="htm">MRDrag</span> - премества обекта в пространството</p>
+    <h2>Интерфейсни клавишни комбинации</h2>
+    <p>
+      <span class="org">T</span>
+      - скрива/показва левия панел
+    </p>
+    <p>
+      <span class="org">NumPad 5</span>
+      - Ortho/Perspective превключва между камерите Орто и Перспективна
+    </p>
 
-  <h2>Интерфейсни клавишни комбинации</h2>
-  <p>
-    <span class="org">T</span>
-    - скрива/показва левия панел
-  </p>
-  <p>
-    <span class="org">NumPad 5</span>
-    - Ortho/Perspective превключва между камерите Орто и Перспективна
-  </p>
+  <h2>Преместване на обект</h2>
+  <ol>
+    <li><span class="htm">MRDrag</span>
+        - премества обекта свободно в пространството<br/>
+        <span class="org">X</span>
+        - ограничава преместването само по оста <span class="htm">X</span><br/>
+        <span class="org">Y</span>
+        - ограничава преместването само по оста <span class="val">Y</span><br/>
+        <span class="org">Z</span>
+        - ограничава преместването само по оста <span class="blu">Z</span><br/>
+        <span class="org">Shift</span> + <span class="org">X</span>
+        - ограничават движението само в равнината
+        <span class="val">Y</span><span class="blu">Z</span><br/>
+        <span class="org">Shift</span> + <span class="org">Y</span>
+        - ограничават движението само в равнината
+        <span class="htm">X</span><span class="blu">Z</span><br/>
+        <span class="org">Shift</span> + <span class="org">Z</span>
+        - ограничават движението само в равнината
+        <span class="htm">X</span><span class="val">Y</span>
+    </li>
+    <li><span class="htm">MLClick</span> - завършва операцията</li>
+    <p>или</p>
+    <ol>
+      <li><span class="org">G</span> - режим преместване на обект</li>
+      <li><span class="htm">MMove</span> - премества свободно на обект<br/>
+          <span class="org">X</span>|<span class="org">Y</span>|<span class="org">Z</span> и
+          <span class="org">Shift</span> +
+          <span class="org">X</span>|<span class="org">Y</span>|<span class="org">Z</span>
+          - ограничават преместването
+      </li>
+      <li><span class="htm">MLClick</span> - завършва операцията</li>
+    </ol>
+    <p>или
+      <ol>
+        <li>влачиш <span class="val">осите</span> на обекта</p></li>
+      </ol>
 
-  <h2>Добавне на обекти</h2>
+
+
+
+  <h2>Добавяне на обекти</h2>
   <p>
     <span class="org">Shift</span> + <span class="org">A</span>
     - отваря контекстно меню за избор на обекти
@@ -79,12 +128,19 @@
     - трети в лентата над таймлайна (долу в ляво)
   </p>
 
-
+  <h2>Дублиране на обект</h2>
+    <ol>
+      <li><span class="htm">MRClick</span> - селектираш обекта</li>
+      <li><span class="org">Shift</span> + <span class="org">D</span>
+          - дублираш обекта</li>
+      <li><span class="htm">MMove</span> - преместваш новия обект<br/>
+          <span class="org">Z</span> - обекта ще се премества само по оста
+          <span class="blu">Z</span></li>
+    </ol>
 
 
 
   <h2>Режим за редактиране на обекти</h2>
-
   <p>
     <span class="org">S</span>
     - scaling преоразмеряване на обекта</p>
@@ -94,6 +150,7 @@
   <p>
     <span class="org">G</span>
     - премества обекта в пространството като <span class="htm">MRDrag</span></p>
+
 
 
   <h2>Режим на редактиране</h2>
@@ -121,6 +178,7 @@
   </p>
 
 
+
 <h2>Създаване на допълнителна геометрия</h2>
   <ol>
     <li>Натискаш <span class="org">Tab</span> за да влезеш в режим редактиране на обект</li>
@@ -133,6 +191,8 @@
     <li>Натискаш <span class="htm">MLClick</span></li>
   </ol>
 
+
+
   <h2>Създаване на допълнителни върхове, ръбове и страни</h2>
     <ol>
       <li>Натискаш <span class="org">Tab</span> -  режим редактиране на обект</li>
@@ -140,7 +200,8 @@
           или <span class="val">Face select</span></li>
       <li><span class="org">Ctrl</span> + <span class="org">R</span>
           появява се <span class="vio">лилаво</span> сечение</li>
-      <li><span class="htm">MMove</span> избираш равнина на сечението</li>
+      <li><span class="htm">MMove</span> избираш равнина на сечението
+      (перпендикуллярно на ръба посочен с курсора)</li>
       <li><span class="htm">MWScroll</span> добавя успоредни сечения, равномерно
       разделящи фигурата</li>
       <li><span class="htm">MLClick</span>
@@ -149,6 +210,8 @@
       <li><span class="htm">MLClick</span> финализира среза/овете или<br/>
           <span class="htm">MRClick</span> центрира и финализира среза/овете</li>
     </ol>
+
+
 
   <h2>Разделяне на куб</h2>
     <ol>
