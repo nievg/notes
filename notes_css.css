@@ -23,6 +23,7 @@ a:hover{color: #61afef; text-decoration: underline;}
 h2{
   margin-top: 30px;
 }
+
 details{margin-left: 70px;}
 summary{
   text-align: right;
@@ -31,6 +32,19 @@ summary{
   color: #999;
 }
 summary:hover{color: #ffc;}
+
+
+details.links{margin-left: 0px;}
+summary.links{
+  text-align: left;
+  padding-right: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ddd;
+  margin-top: 30px;
+}
+
+
 .prop{color: #d19a66; font-weight: bold;}
 .var {color: #abb2bf;}
 .val {color: #98c36e;}

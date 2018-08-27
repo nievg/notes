@@ -48,7 +48,7 @@
     <span class="blu">bluе</span>)
   </p>
 
-  <h2>Премесване в пространството</h2>
+  <h2>Управление на изгледите</h2>
   <p>
     <span class="htm">MWScrolling</span> up/down
     - zoom in/out</p>
@@ -64,16 +64,72 @@
   <p>
     <span class="org">Ctrl</span> + <span class="htm">MWDown</span>
     - премества изгледа наляво/надясно</p>
-
-    <h2>Интерфейсни клавишни комбинации</h2>
-    <p>
-      <span class="org">T</span>
-      - скрива/показва левия панел
-    </p>
     <p>
       <span class="org">NumPad 5</span>
       - Ortho/Perspective превключва между камерите Орто и Перспективна
     </p>
+    <P>
+      <span class="org">NumPad 1</span>
+      - Front view
+    </P>
+    <P>
+      <span class="org">NumPad 7</span>
+      - Top view
+    </P>
+    <P>
+      <span class="org">NumPad 9</span>
+      - Left view
+    </P>
+    <P>
+      <span class="org">NumPad 3</span>
+      - Right view
+    </P>
+    <P>
+      <span class="org">Z</span>
+      - превключва между <span class="blu">Solid</span> изглед на обектите
+      и <span class="blu">Wireframe</span>
+    </P>
+
+    <P>
+      <span class="org">Ctrl</span> + <span class="org">Alt</span> +
+      <span class="org">Numpad 0</span>
+      - показва вид от камерата
+    </P>
+
+
+    <h2>Клавишни комбинации</h2>
+    <p>
+      <span class="org">T</span>
+      - скрива/показва левия панел
+    </p>
+
+    <p><span class="org">N</span>
+       - отваря/затваря отдясно някакъв панел с настройки
+    </p>
+
+    <p><span class="org">А</span> + <span class="org">А</span>
+       - селектира всички обекти на сцената
+    </p>
+
+    <p><span class="org">F</span>
+       - затваря контур или обединява сплайнове в 3D модел
+    </p>
+    <p><span class="org">Alt</span> + <span class="htm">MRClick</span>
+       - селектира затворен контур
+    </p>
+    <p>
+      <span class="org">Space</span> -> <span class="org">bridge</span>
+      - отваря търсачката и търси <span class="val">Bridge Edge Loops</span>
+    </p>
+
+    <p>
+      <span class="org">CtrlDown</span>
+      - изключва временно привързването към грид мрежата
+    </p>
+
+
+
+
 
   <h2>Преместване на обект</h2>
   <ol>
@@ -216,6 +272,7 @@
   <h2>Разделяне на куб</h2>
     <ol>
       <li><span class="org">Tab</span> - влизаш в режим редактиране на обект</li>
+      <li>Избира се таб <span class="val">Tools</span> в левия панел</li>
       <li>Превърташ до секцията <span class="val">Add</span></li>
       <li>Избираш бутона <span class="val">Subdivide</span></li>
       <li>Превърташ до полето <span class="val">Numbers of Cuts</span> и
@@ -230,6 +287,109 @@
       <li>Превърташ до полето <span class="val">Numbers of Cuts</span> и
           пишеш броя на срезовете</li>
     </ol>
+
+
+  <h2>Привързване камерата към изгледа</h2>
+    <ol>
+      <li><span class="org">Ctrl</span> + <span class="org">Alt</span> +
+          <span class="org">Numpad 0</span>
+          - включваш изглед от камерата</li>
+      <li><span class="htm">MWScroll</span>
+          - настройваш си зума на камерата</li>
+      <li><span class="org">N</span> - отваряш допълнителния панел отдясно</li>
+      <li>Разпъваш секцията <span class="val">View</span></li>
+      <li>Поставяш отметка на опцията <span class="val">Lock camera to View</span></li>
+      <li><span class="htm">MWScroll</span> | <span class="htm">MWDrag</span>
+          - настройваш изгледа към обекта</li>
+    </ol>
+
+  <h2>Зареждане на фоново изображение в равнината
+      <span class="htm">X</span><span class="val">Y</span>
+  </h2>
+    <ol>
+      <li><span class="org">Numpad 5</span> - превключваш на камера
+          <span class="blu">Ortho<span></li>
+      <li><span class="org">Numpad 7</span> - включваш изглед
+          <span class="blu">Top</span></li>
+      <li><span class="org">N</span> - отваряш допълнителния панел отдясно</li>
+      <li>Поставяш отметка пред секцията
+         <span class="val">Background Images</span></li>
+      <li>Разпъваш секцията <span class="val">Background Images</span></li>
+      <li>Натискаш бутон <span class="val">Add Image</span></li>
+      <li>Избираш изображение</li>
+      <li><span class="org">Enter</span> - зарежда изображението </li>
+    </ol>
+
+  <h2>Зареждане на чертеж в десния панел</h2>
+    <ol>
+      <li>Натискаш бутона
+          <span class="val">Current editor type for this area</span>
+          в горния ляв ъгъл на десния панел</li>
+      <li>Избираш опцията <span class="val">UV/Image Editor</span></li>
+      <li>Натискаш бутона <span class="val">Open Image</span>
+          в долния десен ъгъл на секцията</li>
+      <li>Избираш изображение</li>
+      <li><span class="org">Enter</span> - зарежда изображението</li>
+      <li><span class="htm">MWScrolling</span> - мащабира изобржението</li>
+      <li><span class="htm">MLDrag</span> - мести изобржението</li>
+    </ol>
+
+  <details class="links">
+    <summary class="links">Линкове</summary>
+
+    <p><a href="https://www.youtube.com/watch?v=3Ij2wP81o_w&index=5&list=PL0lO_mIqDDFW5h4vGzizQDcsqK3nxjvy_" target="_blank">
+       <span class="blu">Blender 3D моделирование</span></a>
+       - видео курс за моделиране с Blender от
+       <a href="https://www.youtube.com/channel/UCvuY904el7JvBlPbdqbfguw " target="_blank">
+       <span class="fnc">Гоша Дударь</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=znoiTDVe-Sg" target="_blank">
+       <span class="blu">3d моделирование в Blender по чертежу с соблюдением размеров</span></a>
+       от
+       <a href="https://www.youtube.com/channel/UCyGkqUw7FQDkY-sztZ5FDDA" target="_blank">
+       <span class="fnc">Nestergal creative school</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=2h84XTrYgL4" target="_blank">
+       <span class="blu">Создание трехмерного плана дома в Blender</span></a>
+       от
+       <a href="https://www.youtube.com/channel/UCLYrT1051M_6XkbEc5Te8PA" target="_blank">
+       <span class="fnc">Blender 3D - уроки</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=zjbmvHe8XcQ" target="_blank">
+       <span class="blu">blende B-сплайны</span></a>
+       от<a href="https://www.youtube.com/channel/UCWUc4NpxZTBorm5TUkDXalg/videos" target="_blank">
+    <span class="fnc">Иван Александров</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=jThdggwmcBwjbmvHe8XcQ" target="_blank">
+       <span class="blu">Blender. Создание дома. Часть 1</span></a>
+       от<a href="https://www.youtube.com/channel/UCcbmaBZEEzGnkFlMj7C1xWw/videos" target="_blank">
+    <span class="fnc">Иван Карманов</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=AAedNiY53C0" target="_blank">
+       <span class="blu">Blender. Создание дома. Часть 2. Крыша и уменьшение полигонной сетки</span></a>
+       от<a href="https://www.youtube.com/channel/UCcbmaBZEEzGnkFlMj7C1xWw/videos" target="_blank">
+    <span class="fnc">Иван Карманов</span></a>
+
+    <p><a href="https://www.youtube.com/watch?v=L4xtVxIsCw8" target="_blank">
+       <span class="blu">Blender. Запекание текстур</span></a>
+       от<a href="https://www.youtube.com/channel/UCcbmaBZEEzGnkFlMj7C1xWw/videos" target="_blank">
+    <span class="fnc">Иван Карманов</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=1LiwrZ-OR2g" target="_blank">
+       <span class="blu">Видеоурок по Blender 2.5. Кривые</span></a>
+       от<a href="https://www.youtube.com/channel/UCIWxJB5VZsDWpTDRtGDuSBQ" target="_blank">
+    <span class="fnc">Максим Ткаченко</span></a>
+    </p>
+
+  </details>
+
+
 
 </body>
 </html>
