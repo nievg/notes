@@ -99,6 +99,13 @@
 
     <h2>Клавишни комбинации</h2>
     <p>
+      <span class="org">Ctrl</span> + <span class="org">Space</span>
+      - скрива/показва <span class="val">3D манипулатора</span> на селектирания
+      обект (осите <span class="htm">X</span> <span class="val">Y</span>
+      <span class="blu">Z</span>)
+    </p>
+
+    <p>
       <span class="org">T</span>
       - скрива/показва левия панел
     </p>
@@ -127,7 +134,18 @@
       - изключва временно привързването към грид мрежата
     </p>
 
-
+    <h2>Добавяне на обекти</h2>
+    <p>
+      <span class="org">Shift</span> + <span class="org">A</span>
+      - отваря контекстно меню за избор на обекти
+    </p>
+    <p>
+      От таб <span class="val">Create</span> в левия панел
+    </p>
+    <p>
+      От бутон <span class="val">Add</span>
+      - трети в лентата над таймлайна (долу в ляво)
+    </p>
 
 
 
@@ -171,18 +189,7 @@
 
 
 
-  <h2>Добавяне на обекти</h2>
-  <p>
-    <span class="org">Shift</span> + <span class="org">A</span>
-    - отваря контекстно меню за избор на обекти
-  </p>
-  <p>
-    От таб <span class="val">Create</span> в левия панел
-  </p>
-  <p>
-    От бутон <span class="val">Add</span>
-    - трети в лентата над таймлайна (долу в ляво)
-  </p>
+
 
   <h2>Дублиране на обект</h2>
     <ol>
@@ -196,17 +203,35 @@
 
 
 
-  <h2>Режим за редактиране на обекти</h2>
-  <p>
-    <span class="org">S</span>
-    - scaling преоразмеряване на обекта</p>
-  <p>
-    <span class="org">R</span>
-    - rotating завъртане на обекта</p>
-  <p>
-    <span class="org">G</span>
-    - премества обекта в пространството като <span class="htm">MRDrag</span></p>
 
+
+  <h2>Преместване на обекти в слоеве</h2>
+    <ol>
+      <li>Селектираш обектите за преместване</li>
+      <li><span class="org">M</span> - отваря панел със слоевете</li>
+      <li>Натискаш слой (някое от квадратчетата)</li>
+    </ol>
+    <ul>
+      <li>кръгче в квадратчето на слоя показва, че слоя не е празен</li>
+      <li><span class="htm">MLClick</span> върху квадратче - показва слоя</li>
+      <li><span class="org">Shift</span> + <span class="org">MLClick</span>
+          върху няколко квадратчета - показва няколко слоя
+      </li>
+      <li><span class="org">~</span> показва/скрива всички слоеве </li>
+    </ul>
+
+
+    <h2>Режим за редактиране на обекти</h2>
+    <p>
+      <span class="org">S</span>
+      - scaling преоразмеряване на обекта</p>
+    <p>
+      <span class="org">R</span>
+      - rotating завъртане на обекта</p>
+    <p>
+      <span class="org">G</span>
+      - премества обекта в пространството като <span class="htm">MRDrag</span>
+    </p>
 
 
   <h2>Режим на редактиране</h2>
@@ -330,9 +355,68 @@
           в долния десен ъгъл на секцията</li>
       <li>Избираш изображение</li>
       <li><span class="org">Enter</span> - зарежда изображението</li>
-      <li><span class="htm">MWScrolling</span> - мащабира изобржението</li>
-      <li><span class="htm">MLDrag</span> - мести изобржението</li>
     </ol>
+    <ul>
+      <li><span class="htm">MWScrolling</span> - мащабира изобржението</li>
+      <li><span class="htm">MWDrag</span> - мести изобржението</li>
+    </ul>
+
+
+  <h2>Настройване на размерността</h2>
+    <ol>
+      <li>Щракаш  върху таб <span class="val">Scene</span>
+         (<span class="val">лампа</span>, <span class="val">сфера</span> и
+          <span class="val">цилиндър</span>) в десния панел</li>
+      <li>В секция <span class="val">Units</span> избираш
+          <span class="val">millimeters</span></li>
+    </ol>
+
+  <h2>Настройване на координатната мрежа</h2>
+    <ol>
+      <li><span class="org">N</span> - отваряш панела на свойствата</li>
+      <li>Разпъваш секция <span class="val">Display</span></li>
+      <li>В полето <span class="val">Lines</span> задаваш броя на линиите</li>
+      <li>В полето <span class="val">Scale</span> задаваш разстоянието между
+          линиите</li>
+    </ol>
+
+<h2>Машабиране</h2>
+  <ol>
+    <li><span class="org">Ctrl</span> + <span class="org">A</span>
+        - отваря контекстно меню</li>
+    <li>Избираш опцията <span class="val">Scale</span></li>
+  </ol>
+  <ul>
+    <li>Панел <span class="val">Properties</span> ->
+        <span class="val">Transforms</span> -> <span class="val">Scale</span> ->
+        полетата <span class="val">X</span>, <span class="val">Y</span> и
+        <span class="val">Z</span> вече имат стойност 1
+      </li>
+    <li></li>
+  </ul>
+
+<h2>Създаване на срезове с точност до милиметър</h2>
+  <ol>
+    <li><span class="org">Numpad 5</span> - включваш
+        <span class="val">Ortho</span> изглед</li>
+    <li><span class="org">Numpad 7</span> - включваш изглед
+        <span class="val">Top</span></li>
+    <li><span class="org">Tab</span> - режим Редактиране на обект</li>
+    <li><span class="org">Ctrl</span> + <span class="org">R</span>
+        - добавяне на срез</li>
+    <li><span class="htm">MLClick</span> - започваш позициониране на среза</li>
+    <li><span class="htm">MMove</span> - изтегляш среза върху левия ръб на обекта</li>
+    <li><span class="htm">MLClick</span> - закотвяш среза на избраната позиция</li>
+    <li><span class="org">G</span> - режим Местене на обект</li>
+    <li><span class="org">X</span> - ограничение Само по оста
+        <span class="htm">X</span></li>
+    <li><span class="org">3.9</span> - примерна стойност на отместване от левия ръб</li>
+    <li><span class="org">-</span> - пишеш минус ако е нужно стойността да бъде
+        отрицателна</li>
+    <li><span class="htm">MLClick</span> - закотвяш среза на избраната позиция</li>
+  </ol>
+
+
 
   <details class="links">
     <summary class="links">Линкове</summary>

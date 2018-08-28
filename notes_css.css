@@ -18,6 +18,8 @@ li{
   font-size: 24px;
   color:#abb2bf;
 }
+ul>li{list-style: none;}
+
 a{color: #56b6c2; text-decoration: none;}
 a:hover{color: #61afef; text-decoration: underline;}
 h2{
@@ -43,7 +45,6 @@ summary.links{
   color: #ddd;
   margin-top: 30px;
 }
-
 
 .prop{color: #d19a66; font-weight: bold;}
 .var {color: #abb2bf;}
