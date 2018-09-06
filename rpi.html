@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RPi Linux</title>
+  <link rel="stylesheet" href="notes_css.css">
+</head>
+<body>
+  <h1>Raspberry Pi 3 model B</h1>
+
+  <h2>Terminal</h2>
+
+  <p>
+    <span class="val">user@computerName</span><span class="vio">~ $</span><span class="org">:</span>
+    - стандартен промпт на терминал и ssh
+  </p>
+  <p><span class="vio">$</span> - промпт на обикновен юзър</p>
+  <p><span class="vio">#</span> - промпт на super user</p>
+  <p><span class="vio">~</span> - home директорията на юзера</p>
+  <p><span class="vio">/</span> - root директорията</p>
+
+  <p><span class="org">/</span> - root</p>
+  <p><span class="org">~</span>  - /home/юзърНейм</p>
+  <p><span class="org">../</span> - родителска директория</p>
+  <p><span class="org">./</span> - текуща директория</p>
+  <p><span class="org">Tab</span> - автоматично дописване</p>
+  <p>
+    <span class="org">su</span> +
+    <span class="org">Tab</span> + <span class="org">Tab</span>
+    - показва всички команди започващи със <span class="org">su</span>
+  </p>
+
+  <p>
+    <span class="org">-</span> еднобуквен флаг
+    <span class="org">-l -a -la</span>
+  </p>
+  <p>
+    <span class="org">--</span> многобуквен флаг
+    <span class="org">--help --version </span>
+  </p>
+  <p><span class="org">clear</span> - чисти терминала</p>
+  <p><span class="org">reset</span> - рестартира конзолата</p>
+  <p><span class="org">wall Message</span>
+     - разпространява съобщение до терминалите на юзърите
+  </p>
+  <p><span class="org">echo</span> <span class="val">anyMessage</span>
+     -	извежда съобщение на екрана
+  </p>
+  <p><span class="org">man</span> - ръководство на команда или програма</p>
+  <p><span class="org">man units</span> - дробни и кратни единици 10^-24 10^18</p>
+  <p><span class="org">man ascii</span> - показва аски таблицата</p>
+
+
+  <h2>gpio</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">gpio readall</span>
+    - показва таблицата с gpio състоянията
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">gpio</span> <span class="fnc">mode
+    <span class="val">25</span> out</span>
+    - сетва пин 25 в режим изход
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">gpio</span> <span class="fnc">write
+    <span class="val">25</span> 0</span>
+    - сетва ниво 0 на пин 25
+  </p>
+
+
+
+
+  <h2>Алиаси</h2>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">alias</span>
+    <span class="val">bedroom<span class="org">='</span>gpio write 2 1; sleep 1;
+    gpio write 2 0; gpio readall</span><span class="org">'</span>
+    - създаване
+  </p>
+  <p>или</p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">alias</span>
+    <span class="val">bedroom<span class="org">='</span>gpio write 2 1 &&
+    sleep 1 && gpio write 2 0 && gpio readall</span><span class="org">'</span>
+    - създаване
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">unalias</span> <span class="val">aliasName</span>
+    - изтриване на алиаси
+  </p>
+
+
+<h2>Създаване на постоянен алиас</h2>
+  <ol>
+    <li>
+      <span class="vio">$</span>
+      <span class="org">echo 'alias
+      <span class="val">bedroom="gpio write 2 1; sleep 1;
+        gpio write 2 0;"</span>' >> ~/.bashrc</span>
+    </li>
+    <li>
+      <span class="vio">$</span> <span class="org">. ~/bashrc</span>
+      - презарежда <span class="org">.bashrc</span> т.е. обкръжението bash
+    </li>
+  </ol>
+
+<h2>Изпълняване на команди при стартиране на ОС</h2>
+  <ol>
+    <li>
+      <span class="vio">$</span> <span class="htm">sudo</span>
+      <span class="fnc">nano</span> <span class="org">/etc/rc.local</span>
+      - отваряш файла /etc/rc.local в текстов редактор
+    </li>
+    <li>
+      пишеш командите си малко над реда съдържащ <span class="val">exit 0</span>
+    </li>
+  </ol>
+  <details>
+    <summary>още</summary>
+    <p>
+      Kомандите, изпълняващи се при стартиране на ОС, се добавят във файл
+      <span class="org">/etc/rc.local</span>
+    </p>
+    <p>Над <span class="val">exit 0</span> пишеш директно терминал команди:</p>
+    <p>
+      <span class="org">gpio</span> <span class="fnc">mode
+      <span class="val">3</span> out</span>
+    </p>
+    <p>
+      <span class="org">gpio</span> <span class="fnc">mode
+      <span class="val">4</span> out</span>
+    </p>
+    <p>
+      <span class="org">gpio</span> <span class="fnc">write
+      <span class="val">3</span> 0</span>
+    </p>
+    <p>
+      <span class="org">gpio</span> <span class="fnc">write
+      <span class="val">4</span> 0</span>
+    </p>
+
+  </details>
+
+<h2>Скриптове</h2>
+  <ol>
+    <li>
+      <p>
+        <span class="vio">$</span> <span class="fnc">nano</span>
+        <span class="val">hi</span>
+        - отваряш текстов редактор
+      </p>
+    </li>
+    <li>
+      <p>Пишеш</p>
+      <p><span class="org">#!/bin/bash</span></p>
+      <p><span class="org">echo "<span class="val">Hello, World</span>"</span></p>
+      <p>Първият ред указва какъв е скрипта и е задължителен</p>
+    </li>
+    <li>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">O</span>
+        Записваш файла под избраното име (в случая <span class="val">hi</span>)
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="vio">$</span> <span class="org">. </span>
+        <span class="val">hi</span>
+        - стартираш скрипта
+      </p>
+      <p>или</p>
+      <p>
+        <span class="vio">$</span> <span class="org">chmod</span>
+        <span class="fnc">+x</span> <span class="val">hi</span>
+        - правиш файла изпълним
+      </p>
+      <p>
+        <span class="vio">$</span>
+        <span class="org">./</span><span class="val">hi</span>
+        - стартираш изпълнимия файл
+      </p>
+    </li>
+  </ol>
+
+
+
+
+<h2>Променливи</h2>
+<p>
+  <span class="vio">$</span>
+  <span class="val">var<span class="org">=</span>value</span>
+  - декларация и присвояване (около <span class="org">=</span> без интервали!)
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  $</span><span class="val">var</span>
+  - четене (връща <span class="val">value</span>)
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  '<span class="val">$var</span>'</span>
+  - връща <span class="val">$var</span>
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  "<span class="val">$var</span>"</span>
+  - връща <span class="val">value</span>
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  $<span class="val">var</span></span>
+  - изпълнява <span class="val">value</span> като команда (може да върне грешка)
+</p>
+<p>
+  <span class="vio">$</span> <span class="val">var2<span class="org">='</span>cat
+  txt</span><span class="org">'</span>
+  - присвоява <span class="val">cat txt</span> на <span class="val">var2</span>
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  $<span class="val">var2</span></span> - връща <span class="val">cat txt</span>
+</p>
+<p>
+  <span class="vio">$</span>
+  <span class="org">$</span><span class="val">var2</span>
+  - връща резултата от <span class="org">cat txt</span> т.е.
+  <span class="htm">изпълнява</span> <span class="org">cat txt</span>
+</p>
+<p>
+  <span class="vio">$</span>
+  <span class="val">var3</span><span class="org">=$(cat txt)</span>
+  - присвоява резултата от <span class="org">cat txt</span> на
+  <span class="val">var3</span>
+</p>
+<p>
+  <span class="vio">$</span>
+  <span class="val">var3</span><span class="org">=`cat txt`</span>
+  - присвоява резултата от <span class="org">cat txt</span> на
+  <span class="val">var3</span>
+
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  "<span class="val">тoва ще изпълни командата ls</span>
+  <span class="htm">$(ls)</span>"</span>
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">let
+  <span class="val">res</span>=<span class="val">1</span>+<span class="val">2</span>
+</p>
+<p>
+  <span class="vio">$</span> <span class="org">echo
+  $</span><span class="val">res</span> - връща 3
+</p>
+
+<h2>Условни конструкции</h2>
+<p>
+  <span class="htm">if</span>
+  <span class="fnc">условие</span><span class="htm">;
+  then</span> <span class="fnc">команди за изпълнение</span><span class="htm">;
+  fi</span>
+</p>
+<p><span class="org">0</span> - <span class="htm">ИСТИНА</span>
+   защото <span class="org">0</span> е код за успешно завършване на програма</p>
+<p><span class="org">1</span> - <span class="fnc">ЛЪЖА</span></p>
+
+
+
+
+
+
+<details>
+  <summary>Връзки</summary>
+  <p>
+    <a href="http://www.linux-bg.org/cgi-bin/y/index.pl?page=article&id=advices&key=344082225" target="_blank">
+      Кратко ръководство за писане на Bash скриптове
+    </a>
+  </p>
+</details>
+
+
+
+
+
+</body>
+</html>
