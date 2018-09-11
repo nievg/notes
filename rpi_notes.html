@@ -42,15 +42,680 @@
   </p>
   <p><span class="org">clear</span> - чисти терминала</p>
   <p><span class="org">reset</span> - рестартира конзолата</p>
-  <p><span class="org">wall Message</span>
+  <p><span class="org">wall</span> <span class="val">Message</span>
      - разпространява съобщение до терминалите на юзърите
   </p>
-  <p><span class="org">echo</span> <span class="val">anyMessage</span>
-     -	извежда съобщение на екрана
+  <p><span class="org">echo</span> <span class="val">anyText</span>
+     -	извежда стринга на екрана
   </p>
   <p><span class="org">man</span> - ръководство на команда или програма</p>
   <p><span class="org">man units</span> - дробни и кратни единици 10^-24 10^18</p>
   <p><span class="org">man ascii</span> - показва аски таблицата</p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd ../chap2
+    <span class="htm">&&</span> ls -l</span>
+    - изпълнява няколко команди последователно
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd
+    ../chap2<span class="htm">;</span> ls -l</span>
+    - като горното
+  </p>
+
+<details>
+  <summary>Подробности</summary>
+  <p>
+    <span class="org">.bashrc</span> - файл с настройки на шела за юзъра.
+    Намира се в <span class="vio">~</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">alias
+    <span class="val">newCmdName</span>='<span class="val">commands</span>'
+  </span> - синтаксис за създаване на алиас
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">alias
+    <span class="val">lal</span>='ls -l'</span>
+    - lal ще връща резултата от командата ls -l
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">alias
+    <span class="val">temperature=</span>='/opt/vc/bin/vcgencmd measure_temp'</span>
+    - ще връща температурата на процесора
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">source ~/bashrc</span>
+    - ще презареди файла с настройките в шела
+  </p>
+  <p>
+    <span class="org">/bin</span>
+    - съдържа шел команди и други основни инструменти
+  </p>
+  <h2>Настройка приветствия шелла</h2>
+    <p>Не помня каво беше това...</p>
+    <p>добавяне в края на файла .bashrc</p>
+    <p>export PS1='hello world'</p>
+    <p>echo "export PS1='helloWorld'" >> .bashrc</p>
+    <p>export PS1="\u \w $" \u - юзерИме \w - pyt</p>
+    <p>funcName(){</p>
+    <p>}</p>
+    <p>export PS1="$PS1 \$(funcName)\$"</p>
+</details>
+
+  <details>
+    <summary>клавишни камбинации</summary>
+      <p><span class="org">up</span>/<span class="org">down</span>
+         - прелиства последните команди</p>
+      <p>
+        <span class="org">alt</span> + <span class="org">.</span>
+        - връща ключове от предишни команди
+      </p>
+
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">L</span>
+        clear
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">A</span>
+        - премества курсора в началото на реда (emacs)
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">E</span>
+        - премества курсора в края на реда
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">B</span>
+        - премества курсора 1 позиция назад
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">F</span>
+        - премества курсора 1 позиция напред
+      </p>
+      <p>
+        <span class="org">Alt </span>+ <span class="org">B</span>
+        - премества курсора 1 дума назад
+      </p>
+      <p>
+        <span class="org">Alt </span>+ <span class="org">F</span>
+        - премества курсора 1 дума напред
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">W</span>
+        - трие всичко от курсора до първия интервал в ляво
+      </p>
+      <p>
+        <span class="org">Ctrl</span> + <span class="org">D</span>
+        -
+      </p>
+  </details>
+
+
+  <h2>Системни</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">set -o</span>
+    - показва системни настройки
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">poweroff</span>
+    - to shutdown immediately
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">shutdown -h now</span>
+    - to shutdown immediately
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">shutdown -h 01:22</span>
+    - to shutdown at 1:22 AM
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">shutdown -c</span>
+    - to cancel shutdown
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">reboot</span>
+    - to reboot immediately
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">raspi-config</span>
+    - отваря меню с конфигурационните настройки
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">startx</span>
+    - зарежда графичния интерфейс
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">uptime</span>
+    - показва колко време работи с-мата без спиране и ресет
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">date</span>
+    - връща Thu 10 Aug 22:58:17 EEST 2017
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">hostname</span>
+    - показва името на компа в мрежата
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">/opt/vc/bin/vcgencmd
+    measure_temp</span> - показва	temp=57.5'C - темпетатурата на процесора
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">who</span>
+    - показва броя виртуални конзоли и броя юзъри, които са в системата
+  </p>
+
+  <p>
+    <span class="vio">$</span> <span class="org">ps</span>
+    - показва списък на програмите изпълнявани в момента
+  </p>
+  <pre style="font-size:20px; margin-top:20px">
+    PID TTY          TIME CMD
+   9540 pts/1    00:00:00 sudo
+   9544 pts/1    00:00:00 su
+   9549 pts/1    00:00:01 bash
+  12824 pts/1    00:00:00 sort
+  12929 pts/1    00:00:00 python
+  12921 pts/1    00:00:00 ps
+  </pre>
+  <p>
+    <span class="vio">$</span> <span class="org">kill</span>
+    <span class="val">имеНаПроцес</span>
+    - спира посочения процес
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">kill</span>
+    <span class="val"> -9 12929 </span>
+    - Killed python
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ps -e</span>
+    - списък
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">df</span>
+    - колко место ти остава на диска (по-добре да се ползва гуи - джи партед)
+   </p>
+   <p>
+     <span class="vio">$</span> <span class="org">sudo !!</span>
+     - изпълнява последна команда със sudo отпред
+  </p>
+  <p>
+    За да не се записват командите в bash history пред тях се изписва интервал
+  </p>
+
+
+
+
+
+
+  <h2>Работа с директории</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">cd</span>
+    <span class="org">dirName</span> - влизане в дир dirName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd ..</span>
+    - връщане в родителската дир
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd
+    ../<span class="val">someDir</span></span>
+    - влиза в someDir, която се намира в родителската папка
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd /</span>
+    - отива в кореновата директория
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd
+    /<span class="val">dir1/dir2/someDir</span></span>
+    - отива по абсолютния път до someDir
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd ~</span>
+    - отива в home директория на юзъра /home/uName (абсолютен път за юзера)
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd -</span>
+    - връща се в предишната директория
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd
+    "<span class="val">two words</span>"</span>
+    - влиза в дир съдържаща интервал
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd</span>
+    <span class="val">two<span class="htm">\</span>
+    words</span> - влиза в дир съдържаща интервал
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cd
+    <span class="val">two<span class="htm">\</span>
+    words</span>/</span> - влиза в дир съдържаща интервал
+  </p>
+
+  <p>
+    <span class="vio">$</span> <span class="org">pwd</span>
+    - посочва дир, в която се намираме
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    - връща списък на дир, в която се намираме
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="blu">-a</span>
+    - показва всички файлове
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="blu">-l</span>
+    - пsоказва детайли за файловете
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="blu">-t</span>
+    - показва файловете сортирани по време в обратен ред
+  </p>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="blu">-l -a </span>
+    - показва детайли за всички файлове
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">ls</span> <span class="blu">-al</span> ==
+    <span class="org">ls</span> <span class="blu">-la</span> ==
+    <span class="org">ls</span> <span class="blu">-la</span> ==
+    <span class="org">ls</span> <span class="blu">-l -a </span> ==
+    <span class="org">ls</span> <span class="blu">-a -l </span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="val">path/dirname</span>
+    - списък на директорията <span class="val">dirname</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="val">dir1 dir2 dir3</span>
+    - показва съдържанието и на трите дир
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls</span>
+    <span class="val">cron</span><span class="htm">*</span>
+    - показва съдържанието на всички директории започващи с
+    <span class="val">cron</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">tree</span>
+    - показва дървовидна структура на директориите
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">tree</span>
+    <span class="htm">/</span>
+    - ще те вкара в кофти цикъл
+  </p>
+
+  <p>
+    <span class="vio">$</span> <span class="org">mkdir</span>
+    <span class="val">dirname</span>
+    - създава директория <span class="val">dirname</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mkdir
+    "<span class="val">two words</span>"</span>
+    - създава дир съдържаща интервал
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rmdir</span>
+    <span class="val">dirname</span>
+    - изтрива директорията, ако е празна
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rm</span>
+    <span class="blu">-r</span> <span class="val">dirname</span>
+    - изтрива директорията и съдържанието и
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rm</span>
+    <span class="blu">-r</span> <span class="val">path/dirName</span>
+    - изтрива директорията и съдържанието и от посоченото място
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="val">dirName</span> <span class="fnc">path</span>
+    - премества dirName в path
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="val">oldDirName</span> <span class="fnc">newDirName</span>
+    - преименува директория oldDirName в newDirName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cp</span>
+    <span class="blu">-r</span>
+    <span class="val">dirName</span> <span class="fnc">dirNameNew</span>
+    - копира dirName в същата дир
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cp</span>
+    <span class="blu">-r</span>
+    <span class="val">dirName</span> <span class="fnc">path</span>
+    - копира dirName в path
+  </p>
+
+<details>
+  <summary>Пример</summary>
+  <h2>Пример</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">cp</span>
+    <span class="blu">-r</span>
+    <span class="val">dir1</span> <span class="fnc">dir2</span>
+    - създава dir2 - копие на dir1
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="blu">-r</span>
+    <span class="val">dir2</span> <span class="fnc">dir1/dir2</span>
+    - премества копието dir2 в оригинала dir1
+  </p>
+  <h2>ERRORS</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">cp</span>
+    <span class="blu">-r</span>
+    <span class="val">dir2</span> <span class="fnc">dir1/dir2</span>
+    - не може dir1 да се копира в себе си
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="val">dir2</span> <span class="fnc">dir1</span>
+    - <span class="htm">грешка</span> dir1 съществува
+  </p>
+</details>
+
+
+
+
+
+
+
+
+
+<h2>Работа с файлове</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">touch</span>
+    <span class="val">fileName</span>
+    - създава файл fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">touch</span>
+    <span class="val">file1 file2 file3 </span>
+    - создает три файла
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="val">fileName</span>
+    - създава файл fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="val">path/fileName</span>
+    - създава файл fileName в място указано от path
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls -l ></span>
+    <span class="val">dirCont.txt</span>
+    - създава файл dirCont.txt и записва резултата от ls -l в него
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">pwd > </span>
+    <span class="val">dirCont.txt</span>
+    - резултата от pwd > презаписва съдържанието на dirCont.txt
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">ls -l >></span>
+    <span class="val">dirCont.txt</span>
+    - ще добави резултата към съдържанието на dirCont.txt
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">echo</span>
+    <span class="val">anyText<span class="org"> > </span>fileName</span>
+    - записва текста във файл fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">nano</span>
+    <span class="val">fileName</span>
+    - отваря файла в редактора nano
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">gedit</span>
+    <span class="val">fileName</span>
+    - отваря файла в редактора gedit
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">vi</span>
+    <span class="val">fileName</span>
+    - отваря файла в редактора vi
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cp</span>
+    <span class="val">source</span> <span class="fnc">destination</span>
+    - копира сорс в дестинейшън
+  </p>
+  <p>
+    сорс може да е само името на файла, а дестинейшън само пътя до новото място
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="val">source</span> <span class="fnc">destination</span>
+    - премества от сорс в дестинейшън
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">mv</span>
+    <span class="val">oldName</span> <span class="fnc">newName</span>
+    - преименува файла oldName в newName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rm</span>
+    <span class="val">fileName</span> - изтрива fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rm *</span>
+    - изтрива всички файлове от дир
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">rm
+    <span class="val">file</span>*</span>
+    - изтрива всички файлове започващи с file
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cmp</span>
+    <span class="val">source</span> <span class="fnc">dest</span>
+    - сравнява файлове
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cat</span>
+    <span class="val">fileName</span>
+    - показва съдържанието на файла fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cat</span>
+    <span class="val">fileName</span>
+    - показва съдържанието на файла fileName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">tac</span>
+    <span class="val">fileName</span>
+    - показва файла, с редове отдолу нагоре
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cat
+    <span class="val">fileName</span> | <span class="fnc">head</span>
+    <span class="val">-2</span></span> - показва първите 2 реда от файла
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cat
+    <span class="val">fileName</span> | <span class="fnc">tail</span>
+    <span class="val">-5</span></span> - показва последните 5 реда от файла
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">cat
+    <span class="val">fileName</span> | <span class="fnc">tail</span>
+    <span class="val">-5</span> | <span class="fnc">head</span>
+    <span class="val">-2</span>
+  </span> - показва първите 2 реда от последните 5
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">wc</span>
+    <span class="val">fileName</span>
+    - показва колко реда, думи и символи има във файла
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">file</span>
+    <span class="val">fileName</span>
+    - дава инфо за типа на fileName
+  </p>
+
+
+scp user@10.0.0.32:/some/path/file.txt
+  	Copies a file over SSH. Can be used to download a file from a PC to the Raspberry Pi.
+    user@10.0.0.32 is the 	username
+
+  and local IP address of the PC, and 	/some/path/file.txt is the
+
+  path and file name of the file 	on the PC
+
+  tail -n 10 fileName -  показва последните 10 реда
+
+
+
+
+  echo 'date; pwd; ls -l' > cmd.txt
+  sh cmd.txt - ще изпълни командите в cmd.txt
+  sh cmd.txt > dirCont.txt - ще запише рез-та в dirCont.txt
+  ./cmd.txt - ще изпълни командите в cmd.txt
+
+
+
+  chmod 777 file.ext - OwnerGroupOthers rwx
+  	r-четене w-запис x-изпълнение флаговете са двоични :)
+  r=4; w=2; x=1
+  chmode 777 * установява права за всички файлове в дир
+  chmode -R 741 * - задава права и за поддир -R - рекурсивно
+
+  Наверно стоит дополнить что rwx является флаги т.е.
+
+  rwx   111   7
+  rw-   110   6
+  r-x   101   5
+  r--   100   4
+  -wx   011   3
+  -w-   010   2
+  --x   001   1
+  ---   000   0
+
+  С другими словами
+  если флаг поднять, то
+  r = 4
+  w = 2
+  x = 1
+  не поднятый флаг равняется нулю
+  тогда
+  прав = r + w + x
+
+
+
+
+
+  grep text fileName - търси текст във файл
+  grep -n text fileName - показва номера на реда и самия ред
+  grep -v text fileName - показва редовете без съвпадение
+  cat /var/log/syslog | grep cron | grep Feb 11 | vim -
+  Ще търси в syslog записи съдържащи cron и от тези записи ще покаже
+
+  само съдържащите Feb 11. Резултатът ще го отвори в vim
+
+    echo 'int main(){printf("Я скомпилировался в Расп");}' > code.c
+    gcc -include stdio.h code.c -o code.exe
+    ./code.exe
+
+
+
+  <h2>Работа с юзъри</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">exit</span>
+    - logout за текущия юзър
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">su</span>
+    <span class="fnc">userName</span> - логва под юзър userName
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo adduser</span>
+    <span class="fnc">bob</span> - добавя юзър боб. Ще пита за pass.
+    Може да се остави празна
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo userdel</span>
+    <span class="fnc">bob</span> - премахва юзъра bob
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo userdel</span>
+    <span class="htm">-r</span> <span class="fnc">bob</span>
+    - премахва юзъра bob и му изтрива хоум дира
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">passwd</span>
+    - променя паролата на curUs (текущия юзър)
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo passwd root</span>
+    - променя pass на root, ако curUs е sudoer
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo passwd</span>
+    <span class="htm">-d</span> - премахва паролата на юзъра bob
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo su</span>
+    - ако юзъра е sudoer го превключва към <span class="htm">root</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo service ssh status</span>
+
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo raspi-config</span>
+    - отваря настройките на Raspberry Pi 3
+  </p>
+
+
+
+  <h2>Добавяне на sudoer</h2>
+  <p>
+    <span class="vio">$</span> <span class="org">sudo visudo</span>
+    - отваря файл <span class="org">/etc/sudoers.tmp</span> в нано
+  </p>
+  <p><span class="fnc"># User privilege specification</span></p>
+  <p><span class="org">root  ALL=(ALL:ALL) ALL</span></p>
+  <p><span class="org">bob   ALL = NOPASSWD: ALL</span></p>
+  <p><span class="fnc">:wq</span></p>
+
+<details>
+  <summary>подробности</summary>
+  <p>
+    <span class="fnc">pi</span> е sudoer т.е. може да изпълнява команди като
+    <span class="htm">root</span> (със <span class="org">sudo</span>)
+  </p>
+  <p>
+    <a href="https://www.raspberrypi.org/documentation/linux/usage/users.md">
+      https://www.raspberrypi.org/documentation/linux/usage/users.md
+    </a>
+  </p>
+</details>
+
+
 
 
   <h2>gpio</h2>
@@ -78,17 +743,25 @@
   <p>
     <span class="vio">$</span>
     <span class="org">alias</span>
-    <span class="val">bedroom<span class="org">='</span>gpio write 2 1; sleep 1;
-    gpio write 2 0; gpio readall</span><span class="org">'</span>
+    <span class="val">bedroom<span class="org">='</span>gpio write 2
+    1<span class="org">;</span> sleep 1<span class="org">;</span> gpio write 2
+    0<span class="org">;</span> gpio readall</span><span class="org">'</span>
     - създаване
   </p>
-  <p>или</p>
   <p>
     <span class="vio">$</span>
     <span class="org">alias</span>
-    <span class="val">bedroom<span class="org">='</span>gpio write 2 1 &&
-    sleep 1 && gpio write 2 0 && gpio readall</span><span class="org">'</span>
-    - създаване
+    <span class="val">bedroom<span class="org">='</span>gpio write 2 1
+    <span class="org">&&</span> sleep 1 <span class="org">&&</span>
+    gpio write 2 0 <span class="org">&&</span>
+    gpio readall</span><span class="org">'</span> - създаване
+  </p>
+  <p>
+    <span class="vio">$</span>
+    <span class="org">alias</span>
+    <span class="val">temperature=<span class="org">='</span>/opt/vc/bin/vcgencmd
+    measure_temp<span class="org">'</span></span>
+    - реален пример
   </p>
   <p>
     <span class="vio">$</span>
@@ -106,7 +779,7 @@
         gpio write 2 0;"</span>' >> ~/.bashrc</span>
     </li>
     <li>
-      <span class="vio">$</span> <span class="org">. ~/bashrc</span>
+      <span class="vio">$</span> <span class="org">. ~/.bashrc</span>
       - презарежда <span class="org">.bashrc</span> т.е. обкръжението bash
     </li>
   </ol>
@@ -271,6 +944,15 @@
    защото <span class="org">0</span> е код за успешно завършване на програма</p>
 <p><span class="org">1</span> - <span class="fnc">ЛЪЖА</span></p>
 
+<h2>Четене на входни данни от скрип</h2>
+<p><span class="blu">#!/bin/bash</span></p>
+<p>
+  <span class="org">echo <span class="fnc">-n</span>
+  "<span class="org">Въведете вашето име: </span>"</span>
+</p>
+<p><span class="org">read</span> <span class="htm">str</span></p>
+<p><span class="org">echo "<span class="val">Здравей,</span>
+  <span class="htm">$str</span>"</span></p>
 
 
 
