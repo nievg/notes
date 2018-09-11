@@ -576,54 +576,131 @@
     <span class="val">fileName</span>
     - дава инфо за типа на fileName
   </p>
+  <p>
+    <span class="vio">$</span> <span class="org">tail -n</span>
+    <span class="fnc">10</span> <span class="val">fileName</span>
+    - показва последните 10 реда
+  </p>
 
 
-scp user@10.0.0.32:/some/path/file.txt
-  	Copies a file over SSH. Can be used to download a file from a PC to the Raspberry Pi.
-    user@10.0.0.32 is the 	username
+    <p>
+      <span class="vio">$</span> <span class="org">echo
+      '<span class="fnc">date; pwd; ls -l</span>' >
+      <span class="val">fileName</span></span>
+      - записва команди във файлa fileName
+    </p>
+    <p>
+      <span class="vio">$</span> <span class="org">sh</span>
+      <span class="val">fileName</span>
+      - ще изпълни командите в fileName
+    </p>
+    <p>
+      <span class="vio">$</span> <span class="org">sh
+      ./<span class="val">fileName</span></span>
+      - ще изпълни командите в fileName
+    </p>
+    <p>
+      <span class="vio">$</span> <span class="org">.</span>
+      <span class="val">fileName</span>
+      - ще изпълни командите в fileName
+    </p>
 
-  and local IP address of the PC, and 	/some/path/file.txt is the
-
-  path and file name of the file 	on the PC
-
-  tail -n 10 fileName -  показва последните 10 реда
-
-
-
-
-  echo 'date; pwd; ls -l' > cmd.txt
-  sh cmd.txt - ще изпълни командите в cmd.txt
-  sh cmd.txt > dirCont.txt - ще запише рез-та в dirCont.txt
-  ./cmd.txt - ще изпълни командите в cmd.txt
+    <p>
+      <span class="vio">$</span> <span class="org">sh
+      <span class="val">fileName</span> >
+      <span class="val">dirCont.txt</span></span>
+      - ще защише резултата от изпълнението в dirCont.txt
+    </p>
 
 
 
-  chmod 777 file.ext - OwnerGroupOthers rwx
-  	r-четене w-запис x-изпълнение флаговете са двоични :)
-  r=4; w=2; x=1
-  chmode 777 * установява права за всички файлове в дир
-  chmode -R 741 * - задава права и за поддир -R - рекурсивно
 
-  Наверно стоит дополнить что rwx является флаги т.е.
 
-  rwx   111   7
-  rw-   110   6
-  r-x   101   5
-  r--   100   4
-  -wx   011   3
-  -w-   010   2
-  --x   001   1
-  ---   000   0
+    <details>
+      <summary>пример</summary>
+      scp user@10.0.0.32:/some/path/file.txt
+        	Copies a file over SSH. Can be used to download a file from a PC to the Raspberry Pi.
+          user@10.0.0.32 is the 	username
 
-  С другими словами
-  если флаг поднять, то
-  r = 4
-  w = 2
-  x = 1
-  не поднятый флаг равняется нулю
-  тогда
-  прав = r + w + x
+        and local IP address of the PC, and 	/some/path/file.txt is the
 
+        path and file name of the file 	on the PC
+
+
+
+  </details>
+
+
+
+
+  <h2>Права на файловете</h2>
+
+  <p>
+    <span class="vio">$</span> <span class="org">chmode</span>
+    <span class="htm">7</span><span class="val">7</span><span class="blu">7</span>
+    <span class="val">file.ext</span>
+    - установява права над файла от групите <span class="htm">Owner</span>
+    <span class="val">Group</span> <span class="blu">Others</span>
+  </p>
+  <p>Всяка цифра задава права за съответната група</p>
+  <p>
+    <span class="org">Права</span> =
+    <span class="htm">четене * 4</span> + <span class="val">запис * 2</span>
+    + <span class="fnc">изпълнение * 1</span>
+    -  формула по която се пресмятат правата
+  </p>
+  <p>
+    Променливите <span class="htm">четене</span>, <span class="val">запис</span>
+    и <span class="fnc">изпълнение</span> могат да имат стойност
+    <span class="blu">0</span> или <span class="htm">1</span>
+  </p>
+  <p>
+    Ако групата има право да извършва някоя от дейностите
+    <span class="htm">четене</span>, <span class="val">запис</span>
+    или <span class="fnc">изпълнение</span>, то стойността на тази дейност
+    трябва да е <span class="htm">1</span> иначе е <span class="blu">0</span>
+  </p>
+  <p>
+    <span class="vio">$</span> <span class="org">chmode</span>
+    <span class="val">777</span> <span class="htm">*</span>
+    - установява права за всички файлове в дир
+  </p>
+
+  <p>
+    <span class="vio">$</span> <span class="org">chmode</span>
+    <span class="blu">-R</span> <span class="val">777</span>
+    <span class="htm">*</span>
+    - задава права и за поддир <span class="blu">-R</span> очначава
+    <span class="blu">рекурсивно</span>
+  </p>
+<details open style="margin-left:15px">
+  <summary>още</summary>
+<pre style="font-size: 20px;">
+r - четене
+w - запис
+x - изпълнение
+флаговете са двоични
+r=4; w=2; x=1
+
+флаг   bin   dec   Права
+rwx    111    7    четене, запис и изпълнение
+rw-    110    6    четене и запис
+r-x    101    5    четене и изпълнение
+r--    100    4    четене
+-wx    011    3    запис и изпълнение
+-w-    010    2    запис
+--x    001    1    изпълнение
+---    000    0
+
+Ако флагът е вдигнат то стойността му е
+r = 4
+w = 2
+x = 1
+иначе е 0
+тогава
+права = r + w + x
+</pre>
+</details>
 
 
 
