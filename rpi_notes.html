@@ -611,26 +611,37 @@
       <span class="val">dirCont.txt</span></span>
       - ще защише резултата от изпълнението в dirCont.txt
     </p>
+    <p>
+      <span class="vio">$</span> <span class="org">grep</span>
+      <span class="fnc">text</span> <span class="val">fileName</span>
+      - търси текст във файл
+    </p>
+
+    <p>
+      <span class="vio">$</span> <span class="org">grep -n</span>
+      <span class="fnc">text</span> <span class="val">fileName</span>
+      - показва номера и съдържанието на реда
+    </p>
+
+    <p>
+      <span class="vio">$</span> <span class="org">grep -v</span>
+      <span class="fnc">text</span> <span class="val">fileName</span>
+      - показва редовете без съвпадение
+    </p>
 
 
-
-
-
-    <details>
+    <details style="margin-left:0px;">
       <summary>пример</summary>
-      scp user@10.0.0.32:/some/path/file.txt
-        	Copies a file over SSH. Can be used to download a file from a PC to the Raspberry Pi.
-          user@10.0.0.32 is the 	username
-
-        and local IP address of the PC, and 	/some/path/file.txt is the
-
-        path and file name of the file 	on the PC
-
-
-
-  </details>
-
-
+      <p>
+        <span class="vio">$</span> <span class="org">cat
+        <span class="fnc">/var/log/syslog</span> | grep
+        <span class="val">cron</span> | grep
+        <span class="val">Feb 11</span> |
+        <span class="fnc">vim</span></span>
+        - Ще търси в syslog записи съдържащи cron и от тези записи ще покаже
+        само съдържащите Feb 11. Резултатът ще го отвори в vim
+      </p>
+    </details>
 
 
   <h2>Права на файловете</h2>
@@ -673,14 +684,20 @@
     - задава права и за поддир <span class="blu">-R</span> очначава
     <span class="blu">рекурсивно</span>
   </p>
-<details open style="margin-left:15px">
+<details style="margin-left:15px">
   <summary>още</summary>
 <pre style="font-size: 20px;">
 r - четене
 w - запис
 x - изпълнение
-флаговете са двоични
-r=4; w=2; x=1
+
+Ако флагът е вдигнат то стойността му е
+r = 4
+w = 2
+x = 1
+иначе е 0
+тогава
+права = r + w + x
 
 флаг   bin   dec   Права
 rwx    111    7    четене, запис и изпълнение
@@ -692,30 +709,19 @@ r--    100    4    четене
 --x    001    1    изпълнение
 ---    000    0
 
-Ако флагът е вдигнат то стойността му е
-r = 4
-w = 2
-x = 1
-иначе е 0
-тогава
-права = r + w + x
+флаговете са двоични
 </pre>
 </details>
 
 
 
 
-  grep text fileName - търси текст във файл
-  grep -n text fileName - показва номера на реда и самия ред
-  grep -v text fileName - показва редовете без съвпадение
-  cat /var/log/syslog | grep cron | grep Feb 11 | vim -
-  Ще търси в syslog записи съдържащи cron и от тези записи ще покаже
 
-  само съдържащите Feb 11. Резултатът ще го отвори в vim
 
-    echo 'int main(){printf("Я скомпилировался в Расп");}' > code.c
-    gcc -include stdio.h code.c -o code.exe
-    ./code.exe
+
+
+
+
 
 
 
@@ -1045,6 +1051,24 @@ x = 1
 </details>
 
 
+<details>
+  <summary>бози</summary>
+
+<p>
+  echo 'int main(){printf("Я скомпилировался в Расп");}' > code.c
+  gcc -include stdio.h code.c -o code.exe
+  ./code.exe
+</p>
+<p></p>
+<p>
+  scp user@10.0.0.32:/some/path/file.txt
+  Copies a file over SSH. Can be used to download a file from a PC
+  to the Raspberry Pi.
+  user@10.0.0.32 is the 	username
+  and local IP address of the PC, and 	/some/path/file.txt is the path
+  and file name of the file 	on the PC
+</p>
+</details>
 
 
 

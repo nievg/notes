@@ -53,11 +53,16 @@ summary.links{
 .htm {color: #e06c75;}
 .fnc {color: #56b6c2;}
 .kw  {color: #c678dd;}
+.vyp {color: #c678dd;}
+.gyp {color: #73c990;}
+.oyp {color: #e2c08d;}
 
-.org {color: #e5c07b;}
+
+.red {color: #e06c75;}
+.grn {color: #98c36e;}
 .blu {color: #61afef;}
-
-
-.grn{color: #66cf66;}
-.vio{color: #bf66bf;} #bf00bf
-.ylw{color: #bfbf00;}
+.cya {color: #56b6c2;}
+.org {color: #e5c07b;}
+.vio {color: #bf66bf;} #bf00bf
+.ylw {color: #bfbf00;}
+.grn2{color: #66cf66;}
