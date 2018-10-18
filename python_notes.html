@@ -112,22 +112,10 @@
 
   <h2>Променливи</h2>
   <p>Типът на променливата не се указва строго</p>
-  <p>
-    <span class="org">test</span>
-    =
-    <span class="val">"String"</span>
-    - стринг
-  </p>
-  <p>
-    <span class="org">test</span>
-    =
-    <span class="fnc">12</span>
-    - цяло число
-  </p>
-  <p>
-    <span class="org">test</span> = <span class="fnc">12.34</span>
-    - число с плаваща запетая
-  </p>
+  <p><span class="org">var</span> = <span class="val">"String"</span> - стринг</p>
+  <p><span class="org">var</span> = <span class="red">12</span> - цяло число</p>
+  <p><span class="org">var</span> = <span class="red">12.34</span> - число с плаваща запетая</p>
+  <p><span class="org">var</span> = <span class="fnc">True</span> - булева</p>
   <p>
     <span class="fnc">del</span> <span class="org">test</span>
     - унищожава променливата
@@ -351,8 +339,260 @@
     else:може да се използва и с цикъла <span class="vyp">while</span>
   </p>
   <p>
-    Ако се използва continue вместо break реда след else винаги се изпълнява 
+    Ако се използва continue вместо break реда след else винаги се изпълнява
   </p>
+
+  <h2>Списъци</h2>
+  <p>
+    <span class="org">s</span> = <span class="org">[]</span>
+  </p>
+  <p>
+    <span class="org">lis</span> =
+    [<span class="red">1</span>,
+    <span class="red">56</span>,
+    <span class="grn">'x'</span>,
+    <span class="red">34</span>,
+    <span class="red">2.34</span>,
+    [<span class="grn">'S'</span>,
+    <span class="grn">'t'</span>,
+    <span class="grn">'r'</span>,
+    <span class="grn">'o'</span>,
+    <span class="grn">'k'</span>,
+    <span class="grn">'a'</span>]]
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">lis</span>)
+    - ще отпечата списъка както е написан в кода
+  </p>
+
+  <p>
+    <span class="org">a</span> = [<span class="org">a</span>
+    <span class="blu">+</span> <span class="org">b</span>
+    <span class="blu">for</span> <span class="org">a</span>
+    <span class="blu">in</span> <span class="grn">'list'</span>
+    <span class="blu">if</span> <span class="org">a</span>
+    <span class="blu">!=</span> <span class="grn">'s'</span>
+    <span class="blu">for</span> <span class="org">b</span>
+    <span class="blu">in</span> <span class="grn">'soup'</span>
+    <span class="blu">if</span> <span class="org">b</span>
+    <span class="blu">!=</span> <span class="grn">'u'</span>]
+  </p>
+  <p>
+    - този ред генерира ще следния списък
+  </p>
+  <p>
+    [<span class="val">'ls'</span>, <span class="val">'lo'</span>
+    <span class="val">'lp'</span>, <span class="val">'is'</span>
+    <span class="val">'io'</span>, <span class="val">'ip'</span>
+    <span class="val">'ts'</span>, <span class="val">'to'</span>
+    <span class="val">'tp'</span>]
+  </p>
+  <br>
+  <p>
+    <span class="org">s</span>.<span class="blu">append</span>(<span class="red">23</span>)
+    - добавя елемент в края на списъка
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">extend</span>(<span class="org">a</span>)
+    - добавя елементите на списъка <span class="org">a</span>
+    след елементите в списъка <span class="org">s</span>
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">insert</span>(<span class="red">index</span>,
+    <span class="val">element</span>)
+    - вмъква <span class="val">element</span> в списъка <span class="org">s</span>
+     на указаната от <span class="red">index</span> позиция
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">remove</span>(<span class="val">element</span>)
+    - премахва първия елемент, който има стойност <span class="val">element</span>
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">pop</span>(<span class="red">i</span>)
+    - премахва <span class="red">i</span>-тия елемент от списъка и го извежда в конзолата
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">pop</span>()
+    - връща последния елемент и го премахва от списъка
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">index</span>(<span class="grn">'element'</span>)
+    - връща индекса на елемента <span class="grn">'element'</span>
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">count</span>(<span class="grn">'elem'</span>)
+    - връща броят елементи, чиято стойност е <span class="grn">'elem'</span>
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">sort</span>()
+    - сортира масива във възходящ ред
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">sort</span>(fnc)
+    - сортира списъка по зададената функция
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">reverse</span>()
+    - сортира списъка в обратен ред по индекс
+  </p>
+  <p>
+    <span class="org">s</span>.<span class="blu">clear</span>()
+    - премахва всички елементи от списъка
+  </p>
+  <br>
+  <p>
+    <span class="org">s</span> = [<span class="red">34</span>,
+    <span class="val">'sd'</span>, <span class="red">56</span>,
+    <span class="red">34.34</span>]
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">s</span>[<span class="red">1</span>])&nbsp;
+    - отпечатва <span class="val">sd</span> т.е. елемента с индекс <span class="red">1</span>
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">s</span>[<span class="red">-1</span>])
+    - отпечатва <span class="red">34.34</span> т.е. последния елемент
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">s</span>[<span class="red">-2</span>])
+    - отпечатва <span class="red">56</span> т.е. предпоследния елемент
+  </p>
+  <br>
+  <p><span class="org">i</span> =  <span class="red">0</span></p>
+  <p>
+    <span class="blu">while</span> <span class="org">i</span> < <span class="red">4</span>:
+  </p>
+  <p>&nbsp;&nbsp;&nbsp;<span class="blu">print</span>(<span class="org">s</span>[<span class="org">i</span>])</p>
+  <p>&nbsp;&nbsp;&nbsp;<span class="org">i</span> += <span class="red">1</span></p>
+  <br>
+  <p>
+    <span class="org">списък</span>[<span class="red">НАЧАЛО</span>:<span class="grn">КРАЙ</span>:<span class="blu">СТЪПКА</span>]
+    - срез на <span class="org">списък</span>
+  </p>
+  <p>
+    <span class="red">НАЧАЛО</span> - индекса на елемента от който започва среза. По подразбиране е <span class="red">0</span>
+  </p>
+  <p>
+    <span class="grn">КРАЙ</span> - краят на среза. Не се включва в среза. По подразбиране е дължината на списъка
+  </p>
+  <p>
+    <span class="blu">СТЪПКА</span> - стъпка (всеки втори елемент или всеки трети и т.н.). По подразбиране е <span class="red">1</span>
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">списък</span>[:])&nbsp;&nbsp;
+    - отпечатва целия списък тъй като всички стойности са по подразбиране
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">списък</span>[<span class="red">1</span>:])&nbsp;
+    - отпечатва елементите от втория до последния включително
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">списък</span>[:<span class="red">3</span>])&nbsp;
+    - отпечатва елементите от началото до третия включително
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">списък</span>[::<span class="red">2</span>])
+    - отпечатва всеки втори елемент
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">списък</span>[:<span class="red">-1</span>])
+    - отпечатва всички елементи в обратен ред (по индекс)
+  </p>
+
+  <h2>Кортежи (tuple)</h2>
+  <p>Кортежите са списъци, които не могат да се променят след като са създадени</p>
+  <p>Кортежите заемат по-малко ресурси от списъците</p>
+  <p>
+    <span class="org">a</span> = (<span class="red">43</span>,
+    <span class="red">56</span>, <span class="red">45.23</span>,
+    <span class="grn">'d'</span>) - кортеж
+  </p>
+  <p>
+    <span class="org">b</span> = [<span class="red">43</span>,
+    <span class="red">56</span>, <span class="red">45.23</span>,
+    <span class="grn">'d'</span>] - списък
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">a</span>.<span class="vio">__sizeof__</span>())
+    - ще отпечата <span class="red">56</span> (байта)
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">b</span>.<span class="vio">__sizeof__</span>())
+    - ще отпечата <span class="red">72</span> (байта)
+  </p>
+  <p><span class="org">a</span> = () - празен кортеж</p>
+  <p>
+    <span class="org">a</span> =
+    <span class="blu">tuple</span>(<span class="grn">'Hello'</span>)
+    - а = ('H', 'e', 'l', 'l', 'o')
+  </p>
+  <p>
+    <span class="org">a</span> =
+    (<span class="grn">'Hello'</span>)
+    - това създава str променлива, а не кортеж
+  </p>
+  <p>
+    <span class="org">a</span> = <span class="red">43</span>,
+    <span class="red">56</span>, <span class="red">45.23</span>,
+    <span class="grn">'d'</span> - това също създава кортеж
+  </p>
+  <p>
+    Функциите за работа с кортежи са като тези за работа със списъци, без променящите списъците
+  </p>
+
+  <h2>Речници</h2>
+  <p>По същество речниците са асоциативни масиви</p>
+  <p><span class="org">d</span> = {} - празен речник</p>
+  <p>
+    <span class="org">d</span> =
+    {<span class="val">key</span> : <span class="red">value</span>,
+     <span class="val">ключ</span> : <span class="red">стойност</span>}
+     - синтаксис за създаване на речник
+  </p>
+  <p>
+    <span class="org">d</span> =
+    <span class="blu">dict</span>(<span class="val">key</span>=<span class="red">value</span>,
+    <span class="val">ключ</span>=<span class="red">стойност</span>)
+    - създава речник
+  </p>
+  <p>
+    <span class="org">d</span> =
+    <span class="blu">dict</span>(<span class="org">[</span>(<span class="val">key</span>,
+    <span class="red">value</span>),
+    (<span class="val">ключ</span>,
+    <span class="red">стойност</span>)<span class="org">]</span>)
+    - създава речник
+  </p>
+  <p>
+    <span class="org">d</span> =
+    <span class="blu">dict</span>.<span class="vio">fromkeys</span>(<span class="org">[</span><span class="val">key</span>, <span class="val">ключ</span><span class="org">]</span>)
+    - речник със стойности <span class="org">NONE</span> и ключове - стойности от списък
+  </p>
+  <p>
+    <span class="org">d</span> =
+    <span class="blu">dict</span>.<span class="vio">fromkeys</span>(<span class="org">[</span><span class="val">key</span>, <span class="val">ключ</span><span class="org">]</span>, <span class="red">1</span>)
+    - речник със стойности <span class="red">1</span> и ключове от списъкa
+  </p>
+  <p>
+    <span class="org">d</span> =
+    {<span class="val">'str'</span>: <span class="red">1</span>,
+    <span class="red">2</span>: <span class="red">3</span>,
+    <span class="red">25.3</span>: <span class="red">4</span>,
+    <span class="fnc">False</span>: <span class="red">2</span>,
+    <span class="val">'a'</span>: <span class="fnc">True</span>}
+  </p>
+  <p>
+    - при този синтаксис ключовете могат да са
+    <span class="val">str</span>, <span class="red">int</span>,
+    <span class="red">float</span>, <span class="fnc">boolean</span>
+  </p>
+  <p>
+    <span class="blu">print</span>(<span class="org">d</span>)
+    - ще отпечата речника в конзолата така сякаш е написан като код
+  </p>
+
+
+
 
     <details class="links">
       <summary class="links">Линкове</summary>
