@@ -300,65 +300,59 @@
     - този ред е задължителен :)
   </p>
   <p>този ред е извън цикъла</p>
-  <br>
-  <p>
-    <span class="blu">continue</span>
-    - пропуска текущата итерация
-  </p>
-  <p>
-    <span class="blu">break</span>
-    - прекратява изпълнението на цикъла
-  </p>
-  <br>
-  <p>
-    <span class="vyp">for<span class="org"> i </span> in
-    <span class="val">"Hello, world!"</span>:</span>
-  </p>
-  <p>&nbsp;&nbsp;<span class="vyp">print</span>(<span class="org">i</span>)</p>
 
   <br>
   <p>
-    <span class="vyp">for<span class="org"> i </span> in
-    <span class="val">"Hello, world!"</span>:</span>
+    <span class="blu">for<span class="org"> i </span> in</span>
+    <span class="val">"Hello, world!"</span>:
+  </p>
+  <p>&nbsp;&nbsp;<span class="blu">print</span>(<span class="org">i</span>)</p>
+  <p> - ще отпеча всеки символ от стринга на отделен ред</p>
+
+  <br>
+  <p>
+    <span class="blu">for<span class="org"> i </span> in</span>
+    <span class="vio">range</span>(<span class="red">10</span>):
+  </p>
+  <p>&nbsp;&nbsp;<span class="blu">print</span>(<span class="org">i</span>)</p>
+  <p> - ще отпеча на отделни редове цифрите от 0 до 9</p>
+
+  <br>
+  <p><span class="vio">continue</span> - пропуска текущата итерация</p>
+  <p><span class="vyp">break</span> - прекратява изпълнението на цикъла</p>
+
+  <br>
+  <p>
+    <span class="blu">for<span class="org"> i </span> in</span>
+    <span class="val">"Hello, world!"</span>:
   </p>
   <p>
-    &nbsp;&nbsp;<span class="vyp">if</span>
+    &nbsp;&nbsp;<span class="blu">if</span>
     <span class="org">i</span><span class="fnc"> ==</span>
     <span class="val">"r"</span>
   </p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vyp">break</span></p>
-  <p>&nbsp;&nbsp;<span class="vyp">print</span>(<span class="org">i</span>)</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vio">break</span></p>
+  <p>&nbsp;&nbsp;<span class="blu">print</span>(<span class="org">i</span>)</p>
   <p>
-  <span class="vyp">else:</span>
+  <span class="blu">else:</span>
   </p>
   <p>
-    &nbsp;&nbsp;<span class="vyp">print</span>(<span class="org">i</span>)
-    - този ред ше се изпълни само, ако <span class="vyp">break</span> не е настъпил
+    &nbsp;&nbsp;<span class="blu">print</span>(<span class="org">i</span>)
+    - този ред ше се изпълни само, ако <span class="vio">break</span> не е настъпил
   </p>
-  <p>
-    else:може да се използва и с цикъла <span class="vyp">while</span>
-  </p>
-  <p>
-    Ако се използва continue вместо break реда след else винаги се изпълнява
-  </p>
+  <br/>
+  <p>else:може да се използва и с цикъла <span class="vio">while</span></p>
+  <p>Ако се използва continue вместо break реда след else винаги се изпълнява</p>
 
   <h2>Списъци</h2>
+  <p><span class="org">s</span> = <span class="org">[]</span></p>
   <p>
-    <span class="org">s</span> = <span class="org">[]</span>
-  </p>
-  <p>
-    <span class="org">lis</span> =
-    [<span class="red">1</span>,
-    <span class="red">56</span>,
-    <span class="grn">'x'</span>,
-    <span class="red">34</span>,
-    <span class="red">2.34</span>,
-    [<span class="grn">'S'</span>,
-    <span class="grn">'t'</span>,
-    <span class="grn">'r'</span>,
-    <span class="grn">'o'</span>,
-    <span class="grn">'k'</span>,
-    <span class="grn">'a'</span>]]
+    <span class="org">lis</span> = [<span class="red">1</span>,
+    <span class="red">56</span>, <span class="grn">'x'</span>,
+    <span class="red">34</span>, <span class="red">2.34</span>,
+    [<span class="grn">'S'</span>, <span class="grn">'t'</span>,
+    <span class="grn">'r'</span>, <span class="grn">'o'</span>,
+    <span class="grn">'k'</span>, <span class="grn">'a'</span>]]
   </p>
   <p>
     <span class="blu">print</span>(<span class="org">lis</span>)
@@ -580,6 +574,14 @@
     <span class="red">25.3</span>: <span class="red">4</span>,
     <span class="fnc">False</span>: <span class="red">2</span>,
     <span class="val">'a'</span>: <span class="fnc">True</span>}
+  </p>
+  <p>
+    <span class="org">d</span> =
+    {<span class="org">a</span>: <span class="org">a</span>
+    <span class="blu">**</span> <span class="red">3</span>
+    <span class="blu">for</span> <span class="org">a</span>
+    <span class="blu">in</span>
+    <span class="vio">range</span>(<span class="red">7</span>)}
   </p>
   <p>
     - при този синтаксис ключовете могат да са
