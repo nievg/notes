@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="notes_css.css">
+  <title>Canvas notes</title>
+</head>
+<body>
+  <h1>Canvas notes</h1>
+
+
+  <h2>Свързване на canvas към JS</h2>
+  <p>
+     <span class="kw">var</span>
+     <span class="htm">theCanvas</span>
+      =
+     <span class="htm">document</span>.<span class="fnc">getElementById</span>(<span class="val">'Canvas1'</span>);
+  </p>
+  <p>
+    <span class="kw">var</span>
+    ctx =
+    <span class="htm">theCanvas</span>.<span class="fnc">getContext</span>(<span class="val">"2d"</span>);
+  </p>
+
+  <h2>Свойства на canvas</h2>
+  <p>
+    ctx.<span class="prop">canvas.width</span>
+    - съхранява широчината на платното
+  </p>
+  <p>
+    ctx.<span class="prop">canvas.height</span>
+    - съхранява височина на платното
+  </p>
+  <p>
+    theCanvas.<span class="prop">width</span> = <span class="val">400</span>;
+    - задава широчината на платното
+  </p>
+  <p>
+      theCanvas.<span class="prop">height</span> = <span class="val">200</span>;
+      - задава височината на платното
+  </p>
+  <p>
+    theCanvas.<span class="prop">width</span> =
+    <span class="htm">window</span>.<span class="org">innerWidth</span>
+    - платното става широко колкото прозореца
+  </p>
+  <p>
+    theCanvas.<span class="prop">height</span> =
+    <span class="htm">window</span>.<span class="org">innerHeight</span>
+    - платното става високо колкото прозореца
+  </p>
+  <p>
+    <span class="fnc">display</span>:
+    <span class="org">block</span>;
+    това css свойство зададено на canvas премахва скролбаровете
+  </p>
+
+
+
+  <h2>Цвят на контур и запълване, широчина на линия</h2>
+  <p>
+     ctx.<span class="prop">strokeStyle</span> =
+     <span class="val">"#ccc"</span>
+     - задава цвят на контура. Стойността трябва да е кавички
+  </p>
+
+  <p>
+     ctx.<span class="prop">fillStyle</span> =
+     <span class="val">"rgba(r, g, b, a)"</span>
+     - задава цвят на запълването.
+  </p>
+
+  <p>
+    ctx.<span class="prop">lineWidth</span> =
+    <span class="val">5</span>
+    - задава широчина на линията
+  </p>
+
+
+  <h2>Рисуване на правоъгълник</h2>
+  <p>
+    ctx.<span class="prop">clearRect(x, y, w, h)</span>
+    - трие съдържанието в границите на правоъгълника
+  </p>
+  <p>
+    ctx.<span class="prop">fillRect(x, y, w, h)</span>
+    - чертае запълнен провоъгълник
+  </p>
+  <p>
+    ctx.<span class="prop">strokeRect(x, y, w, h)</span>
+    - чертае правоъгълник
+  </p>
+
+
+  <h2>Рисуване на линии</h2>
+  <p>
+    ctx.<span class="prop">lineWidth</span>
+    = <span class="val">5</span>
+    - задава широчина на линията в пиксели
+  </p>
+
+  <p>
+    ctx.<span class="prop">lineCap</span>
+    = <span class="val">"<span class="org">butt</span>/round/square";</span>
+    - указва как да завършва линията butt is default
+  </p>
+
+  <p>
+    ctx.<span class="prop">lineJoin</span>
+    = <span class="val">"round/bevel/<span class="org">miter</span></span>(default)<span class="val">";</span>
+    - указва как се свързват краищата на линиите
+  </p>
+
+  <p>
+    ctx.<span class="prop">miterLimit</span>
+    = <span class="val">10;</span>
+    - указва граница на скосяване 10 is default value
+  </p>
+
+  <p>
+    ctx.<span class="prop">beginPath()</span>
+    - с това започва изчертаване на линия
+  </p>
+
+  <p>
+    ctx.<span class="prop">moveTo(x, y)</span>
+    - премества молива в указаната точка
+  </p>
+
+  <p>
+    ctx.<span class="prop">lineTo(x, y)</span>
+    - чертае линия от текущата точка до точката указана с x и y
+  </p>
+
+  <p>
+    ctx.<span class="prop">stroke()</span>
+    - изчертава всичко зададено след beginPath()
+  </p>
+
+  <h2>Състояние на настройките за рисуване</h2>
+  <p>
+    ctx.<span class="prop">save()</span>
+    - съхранява текущите стойности на свойствата на контекста
+  </p>
+  <p>
+    ctx.<span class="prop">restore()</span>
+    - възстановява от стека оригиналния контекст, записан със save()
+  </p>
+
+  <h2>Рисуване на контури (paths)</h2>
+  <p>
+    ctx.<span class="prop">beginPath()</span>
+    - с това започва дефинициите на контура
+  </p>
+
+  <p>
+    ctx.<span class="prop">closePath()</span>
+    - затваря контура (свързва с линия началната и крайната точки на контура)
+  </p>
+
+  <p>
+    ctx.<span class="prop">fill()</span>
+    - запълва контура
+  </p>
+
+  <p>
+    ctx.<span class="prop">stroke()</span>
+    - изчертава контура (линиите и дъгите зададени след beginPath())
+  </p>
+
+  <p>
+    Ако fill() е след stroke(), запълването ще покрива контура и линията ще
+    изглежда по-тънка
+  </p>
+
+  <h2>Рисуване на дъги (arcs)</h2>
+  <p>
+    ctx.<span class="prop">beginPath()</span>
+    - начало на дефинициите на дъгата
+  </p>
+
+  <p>
+    ctx.<span class="prop">closePath()</span>
+    - затваря дъгата (свързва с линия началната и крайната точки на дъгата)
+  </p>
+
+  <p>
+    ctx.<span class="prop">fill()</span>
+    - запълва дъгата
+  </p>
+
+  <p>
+    ctx.<span class="prop">stroke()</span>
+    - изчертава дъгите зададени след beginPath())
+  </p>
+
+  <p>
+    ctx.<span class="prop">arcТо(x1, y1, x2, y2, r)</span>,
+    където x1, y1 - свободната точка на тангентата, x2, y2 - допирателната точка
+    към тангентата на дъгата,  r - радиус
+  </p>
+
+  <p>
+    ctx.<span class="prop">arc(x, y, r, sA, eA, cCW)</span>,
+    където x и y - координати на центъра,  r - радиус, sA - от ъгъл,
+    еА - до ъгъл, cCW - counterClockWise посока на завъртане (false is default)
+  </p>
+
+  <p>
+    <span class="org">ВАЖНО!!!</span> За разлика от математиката
+    тук положителната посока съвпада с посоката на въртене на часовниковата
+    стрелка. Това е заради посоката на оста Y, която е насочена надолу.
+    Така всички математически зависимости се запазват и не e нужно да се прилага
+    трансформация на координатите (y = -1 * yo). 0 rad е на същото място както в
+    математиката (т.е. на 3 часА), но PI/2 е на 6 часа т.е. на мястото на 3*PI/2
+    (270 deg).
+  </p>
+
+  <h2>Криви на Безие и квадратични криви</h2>
+  <p>
+    ctx.<span class="prop">bezierCurveTo(x1, y1, x2, y2, x3, y3)</span>
+    - чертае крива на Безие с начална точка текущата позиция на молива, крайна
+    точка x3, y3, първа контролна точка x1, y1 и втора контролна точка x2, y2
+  </p>
+  <p>
+    ctx.<span class="prop">quadraticCurveTo(x1, y1, x3, y3)</span>
+    - чертае квадратична крива с начална точка текущата позиция на молива, крайна
+    точка x3, y3 и контролна точка x1, y1
+    <p>
+      ctx.<span class="prop">beginPath()</span>
+      - начало на дефиницията на кривата
+    </p>
+
+    <p>
+      ctx.<span class="prop">closePath()</span>
+      - затваря кривата (свързва с линия началната и крайната точки на кривата)
+    </p>
+
+    <p>
+      ctx.<span class="prop">fill()</span>
+      - запълва кривата
+    </p>
+
+    <p>
+      ctx.<span class="prop">stroke()</span>
+      - изчертава кривата
+    </p>
+  </p>
+
+  <h2>Работа с текст</h2>
+  <p>
+    ctx.<span class="prop">font</span> = <span class="val">"30px Comic Sans MS"</span>
+    - задава шрифт и размер на текста
+  </p>
+  <p>
+    ctx.<span class="prop">fillStyle</span> = <span class="val">"red"</span>
+    - задава цвят на запълването
+  </p>
+  <p>
+    ctx.<span class="prop">textAlign</span> = <span class="val">"center"</span>
+    - подравнява текста <span class="org">start</span>/end/left/center/right
+  </p>
+  <p>
+    ctx.<span class="prop">textBaseline</span> =
+    <span class="val">"<span class="org">alphabetic</span>/top/middle/bottom"</span>
+    - има и други опции
+  </p>
+  <p>
+    ctx.<span class="prop">measureText(text)</span>
+    - връща размера на стринга
+  </p>
+  <p>
+    ctx.<span class="prop">fillText("Hello", cnv.width/2, cnv.height/2, [maxW])</span>
+    - центрира текста в платното
+  </p>
+  <p>
+    ctx.<span class="prop">strokeText(txt, x, y , [maxWidth])</span>
+    - maxWidth събира текста в указаната ширина
+  </p>
+
+  <h2>Създаване на сенки</h2>
+  <p>
+    ctx.<span class="prop">shadowBlur</span> =
+    <span class="org">0</span>
+    - рязкост на сянката
+  </p>
+  <p>
+    ctx.<span class="prop">shadowColor</span> =
+    <span class="org">'black'</span>
+    - цвят на сянката
+  </p>
+  <p>
+    ctx.<span class="prop">shadowOffsetX</span> =
+    <span class="org">0</span>
+    - отмества сянката от обекта надясно или наляво(отрицателни стойности)
+  </p>
+  <p>
+    ctx.<span class="prop">shadowOffsetY</span> =
+    <span class="org">0</span>
+    - отмества сянката от обекта надолу или нагоре(отрицателни стойности)
+  </p>
+
+  <h2>Използвшане на шаблони (patterns)</h2>
+  <p>
+    <span class="prop">ctx.createPattern(element,</span>
+      <span class="val">'<span class="org">no-repeat</span>/repeat/repeat-x/repeat-y'</span><span class="prop">)</span>
+  </p>
+
+  <h2>Градиенти (gradients)</h2>
+  <p>
+    ctx.<span class="prop">createLinearGradient(<span class="org">x0, y0,</span> x1, y1)</span>
+    - x0, y0 - начална точка на градиента x1, y1 - крайна точка на градиента
+  </p>
+  <p>
+    ctx.<span class="prop">createRadialGradient(<span class="org">x0, y0, r0,</span> x1, y1, r1)</span>
+    - x0, y0, r0 - определя вътрешния кръг на градиента, x1, y1, r1 - външен кръг на градиента
+  </p>
+  <p>
+    grad.<span class="prop">addColorStop(position, color)</span>
+    - позиция на цвета в реда на градиента от 0 до 1 и цвят
+  </p>
+  <p>
+    <span class="org">ВАЖНО!!!</span> Шаблоните и градиентите засягат цялата
+    площ на canvas елемента. Ако нарисуваме две еднакви фигури в различни части
+    на canvas градиента им ще бъде различен защото те показват градинта в устъка,
+    в който са нарисувани. Все едно във Фотошоп да има градиент в background-а,
+    а върху него да има непрозрачен слой. Ако се изтрият квадрати в различни
+    места в непрозрачния леър ще се види част от градиента на background-а.
+  </p>
+
+  <details class="links">
+    <summary class="links">Линкове</summary>
+
+    <p><a href="https://www.youtube.com/watch?v=Tmr85IaJpWI&list=PLpY_9m7gHQDgKMb4U2u8X8JU0lDlCYFQ4" target="_blank">
+       <span class="blu">HTML5 Графика и Анимация с Canvas</span></a>
+       - Linda.com от
+       <a href="https://www.youtube.com/channel/UCYcOu-hGM8gqcXFU1jnFJtg" target="_blank">
+       <span class="fnc">Учись - программированию - бесплатно</span></a>
+    </p>
+
+    <p><a href="https://www.youtube.com/watch?v=XYgcNVwHUdg" target="_blank">
+       <span class="blu">Учим HTML5 Canvas за 30 минут!</span></a> от
+       <a href="https://www.youtube.com/channel/UC7f5bVxWsm3jlZIPDzOMcAg" target="_blank">
+       <span class="fnc">Хауди Хо™ - Просто о мире IT!</span></a>
+    </p>
+
+  </summary>
+</details>
+
+</body>
+</html>
