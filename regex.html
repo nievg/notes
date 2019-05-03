@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="notes_css.css">
+  <title>RegExp</title>
+</head>
+<body>
+  <h1>RegExp</h1>
+
+  <h2>Флагове</h2>
+  <p><span class="org">/g</span>
+    - <span class="cya">global</span>
+    Ако е вдигнат връща всички съвпадения, ако не е - само първото</p>
+  <p><span class="org">/i</span> - <span class="cya">ignoreCase</span>
+    връща съвпадения с главни малки букви</p>
+
+  <h2>Метасимволи</h2>
+  <p><span class="org">.</span> - всеки единичен символ с изключение на символът за нов ред</p>
+  <p><span class="org">[]</span> - търси символите изброени в скобите</p>
+  <p><span class="org">[^]</span> - връща символите, които не съвпадат с изброените в скобите</p>
+  <p><span class="org">*</span> - 0 или повече съвпадения на предшестващия символ</p>
+  <p><span class="org">+</span> - 1 или повече съвпадения на предшестващия символ</p>
+  <p><span class="org">?</span> - Прави предшестващия символ опционален</p>
+  <p><span class="org">{n, m}</span> - връща поне n съвпадения, но не повече от m</p>
+  <p><span class="org">(абв)</span> - Намира група символи строго в зададения ред</p>
+  <p><span class="org">|</span> - Разделител на възможните варианти</p>
+  <p><span class="org">\</span> - Следвашият символ губи значение за синтаксиса на РИ. Използва се за [](){}.*+?^$\|</p>
+
+  <h2>Примери</h2>
+  <p><span class="org">.</span> - всеки единичен символ</p>
+  <p><span class="org">.ar</span> - всеки единичен символ пред ar (bar car par)</p>
+  <p><span class="org">[Tt]he</span> - връща The и the</p>
+  <p><span class="org">ar[.]</span> - [.] означава само точка. Изразът връща всички ar.</p>
+  <p><span class="org">[^c]ar</span> - връща bar par и т.н., но не и car</p>
+  <pre><p><span class="org">\s*иран\s</span> - връща<span class="bcya"> иран </span>, но не <span class="bcya">иран</span>ски съб<span class="bcya">иран</span>е съб<span class="bcya">иран</span></p></pre>
+
+
+
+
+
+  <h2>Връзки</h2>
+  <p><a href="https://proglib.io/p/learn-regex/" target="_blank">
+    <span class="blu">6 пунктов, которые помогут легко разобраться с regexp</span></a> от
+    <a href="https://proglib.io/p/author/danatsoy/" target="_blank">
+    <span class="fnc">danatsoy</span></a></p>
+
+  <p><a href="https://regex101.com/" target="_blank">
+    <span class="blu">regex101.com - инструмент за съставяне на шаблони</span></a></p>
+
+
+<br><br><br>
+
+</body>
+</html>

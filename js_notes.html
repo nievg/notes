@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS notes</title>
+  <link rel="stylesheet" href="notes_css.css">
+</head>
+<body>
+  <h1>JS бележки</h1>
+  <h2>Деклариране на променливи</h2>
+  <p>
+    <span class="org">var</span> <span class="cya">car</span>;
+    - декларира променлива, която може да се предекларира и да се променя.
+    Видимост е глобална. Променливата може да се използзва преди декларацията и
+  </p>
+  <p>
+    <span class="org">let</span> <span class="cya">asd</span>;
+    - декларира променлива, която не може да се предекларира, но може да се променя.
+    Видимостта в блок. Променливата не може да се използва преди декларацията и.
+  </p>
+  <p>
+    <span class="org">const</span> <span class="cya">nep</span> = <span class="red">2.71</span>;
+    - декларира и инициализира константа, не може да се предекларира и променя.
+    Видимост в блок. Ако константата е инициализирана с обект, то свойствата на обекта
+    могат да се променят, но на константа не може да се присвои друг обект или стойност.
+  </p>
+
+
+  <h2>Условна конструкция <span class="org">if</span></h2>
+  <pre>
+    <span class="org">if</span><span class="cya">(условие)</span><span class="org">{</span>
+      // код, който се изпълнямва, ако условието е <span class="grn">true</span>
+    <span class="org">}</span>
+    <span class="org">else{</span>
+      // код, който се изпълнямва, ако условието е <span class="red">false</span>
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Условна конструкция <span class="org">else if</span></h2>
+  <pre>
+    <span class="org">if</span><span class="cya">(условие_1)</span><span class="org">{</span>
+      // код, който се изпълнямва, ако условие_1 е <span class="grn">true</span>
+    <span class="org">}</span>
+    <span class="org">else if</span><span class="cya">(условие_2)</span><span class="org">{</span>
+      // код, който се изпълнямва, когато условие_1 е <span class="red">false</span>, а условие_2 е <span class="grn">true</span>
+    <span class="org">}</span>
+    <span class="org">else if</span><span class="cya">(условие_3)</span><span class="org">{</span>
+      // код, който се изпълнямва, когато условие_1 и условие_2 са <span class="red">false</span>, а условие_3 е <span class="grn">true</span>
+    <span class="org">}</span>
+    <span class="org">else{</span>
+      // код, който се изпълнямва, когато условие_1, условие_2 и условие_3 са <span class="red">false</span>
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Условна конструкция <span class="org">switch</span></h2>
+  <pre>
+    <span class="org">let</span> <span class="cya">fruit</span> = <span class="grn">'Ябълка'</span>;
+
+    <span class="org">switch</span>(<span class="cya">fruit</span>)<span class="org">{</span>
+      <span class="org">case</span> <span class="grn">"Banana"</span>:
+        <span class="cya">text</span> = <span class="grn">"Обичам банани"</span>;
+        <span class="org">break</span>;
+      <span class="org">case</span> <span class="grn">"Orange"</span>:
+        <span class="cya">text</span> = <span class="grn">"Харесвам портокали"</span>;
+        <span class="org">break</span>;
+      <span class="org">case</span> <span class="grn">"Apple"</span>:
+      <span class="org">case</span> <span class="grn">"Ябълка"</span>:
+        <span class="cya">text</span> = <span class="grn">"My favorite fruit"</span>;
+        <span class="org">break</span>;
+      <span class="org">default</span>:
+        <span class="cya">text</span> = <span class="grn">"Не знам що за плод е това"</span>;
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Тернарен оператор <span class="org">?</span></h2>
+  <p><span class="org">let</span> <span class="cya">a</span> = <span class="red">1</span></p>
+  <p> <span class="org">let</span> <span class="cya">b</span> = (<span class="cya">a</span> > <span class="red">0</span>)? <span class="grn">true</span> : <span class="red">false</span></p>
+  <p> <span class="org">let</span> <span class="cya">c</span> = <span class="cya">b</span> ? <span class="grn">'две'</span> : <span class="red">2</span></p>
+  <p><span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">a</span>,
+     <span class="cya">b</span>, <span class="cya">c</span>) - връща 1 true "две"</p>
+
+  <h2>Цикъл <span class="org">for</span></h2>
+  <pre>
+    <span class="org">for</span>(<span class="cya">i</span>=<span class="red">0</span>; <span class="cya">i</span><<span class="red">10</span>; <span class="cya">i</span>++)<span class="org">{</span>
+      <span class="org">console</span>.<span class="cya">log</span>(<span class="cya">i</span>);
+    <span class="org">}</span>
+  </pre>
+  <br/>
+  <pre>
+    <span class="org">for</span>(<span class="cya">i</span>=<span class="red">10</span>; <span class="cya">i</span>><span class="red">0</span>; <span class="cya">i</span>-=<span class="red">2</span>)<span class="org">{</span>
+      <span class="org">console</span>.<span class="cya">log</span>(<span class="cya">i</span>);
+    <span class="org">}</span>
+  </pre>
+  <br>
+  <pre>
+    <span class="org">for</span>(<span class="cya">i</span> = <span class="red">0</span>, <span class="cya">len</span> = <span class="cya">cars</span>.<span class="blu">length</span>, <span class="cya">text</span> = <span class="grn">""</span> ; <span class="cya">i</span> < <span class="cya">len</span>; <span class="cya">i</span><span class="red">++</span>)<span class="org">{</span>
+      <span class="cya">text</span> += <span class="cya">cars</span>[<span class="cya">i</span>] + <span class="grn">"&lt;br&gt;"</span>;
+    <span class="org">}</span>
+  </pre>
+  <br>
+  <pre>
+    <span class="org">let</span> <span class="cya">i</span> = <span class="red">0</span>;
+    <span class="org">let</span> <span class="cya">len</span> = <span class="cya">cars</span>.<span class="blu">length</span>;
+    <span class="org">for</span>(; <span class="cya">i</span> < <span class="cya">len</span>;)<span class="org">{</span>
+      <span class="cya">text</span> += <span class="cya">cars</span>[<span class="cya">i</span>] + <span class="grn">"&lt;br&gt;"</span>;
+      <span class="cya">i</span><span class="red">++</span>;
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Цикъл <span class="org">while</span></h2>
+  <pre>
+    <span class="org">let</span> <span class="cya">i</span>=<span class="red">0</span>;
+    <span class="org">while</span>(<span class="cya">i</span><<span class="red">0</span>)<span class="org">{</span>
+      <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">i</span>);
+      <span class="cya">i</span><span class="red">++</span>;
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Цикъл <span class="org">do while</span></h2>
+  <pre>
+    <span class="org">let</span> <span class="cya">i</span>=<span class="red">0</span>;
+    <span class="org">do</span>{
+      <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">i</span>);
+      <span class="cya">i</span><span class="red">++</span>;
+    }<span class="org">while</span>(<span class="cya">i</span><<span class="red">0</span>)
+  </pre>
+
+  <h2>Цикъл <span class="org">for in</span></h2>
+  <pre>
+    <span class="org">for</span>(<span class="org">let</span> <span class="blu">property</span> <span class="org">in</span> <span class="cya">object</span>){
+      <span class="cya">console</span>.<span class="blu">log</span>(<span class="blu">property</span>) // свойство
+      <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">object</span>[<span class="blu">property</span>]) // стойност
+    }
+  </pre><br>
+  <pre>
+    <span class="org">let</span> <span class="cya">person</span> = {<span class="blu">fname</span>:<span class="grn">"John"</span>, <span class="blu">lname</span>:<span class="grn">"Doe"</span>, <span class="blu">age</span>:<span class="red">25</span>};
+    <span class="org">let</span> <span class="cya">text</span> = <span class="grn">""</span>;
+    <span class="org">let</span> <span class="blu">x</span>;
+    <span class="org">for</span>(<span class="blu">x</span> <span class="org">in</span> <span class="cya">person</span>)<span class="org">{</span>
+      <span class="cya">text</span> += <span class="cya">person</span>[<span class="blu">x</span>] + <span class="grn">" "</span>;
+    <span class="org">}</span>
+  </pre>
+
+  <h2>Конструкциите <span class="org">break</span> и <span class="org">continue</span> statement</h2>
+  <pre>
+    <span class="org">for</span>(<span class="cya">i</span>=<span class="red">0</span>; <span class="cya">i</span><<span class="red">10</span>; <span class="cya">i</span>++)<span class="org">{</span>
+      <span class="org">if</span>(<span class="cya">i</span>==<span class="red">4</span>) <span class="org">break</span>       <span class="grn">// прекъсва изпълнението на цикъла, когато i стане 4</span>
+      <span class="cya">console</span>.<span class="cya">log</span>(<span class="cya">i</span>);
+    <span class="org">}</span>
+    - този пример отпечатва на отделни редове 0 1 2 3
+
+    <span class="org">for</span>(<span class="cya">i</span>=<span class="red">0</span>; <span class="cya">i</span><<span class="red">10</span>; <span class="cya">i</span>++)<span class="org">{</span>
+      <span class="org">if</span>(<span class="cya">i</span>==<span class="red">4</span>) <span class="org">continue</span>   <span class="grn">// прескача веднага на следващата итерацията</span>
+      <span class="cya">console</span>.<span class="cya">log</span>(<span class="cya">i</span>);
+    <span class="org">}</span>
+   - този пример отпечатва цифрите от 0 до 9, но без 4
+  </pre>
+
+  <h2>Функции</h2>
+  <pre>
+  <span class="org">function</span> <span class="blu">hi</span>(){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="grn">'Hello'</span>);
+  }
+  <span class="blu">hi</span>();
+
+  <span class="blu">summa</span>(<span class="red">3</span>, <span class="red">4</span>);          <span class="grn">// 3 и 4 сa параметри предавани на функцията</span>
+  <span class="org">function</span> <span class="blu">summa</span>(<span class="cya">a</span>, <span class="cya">b</span>){ <span class="grn">// a и b са аргументи на функцията</span>
+    <span class="org">return</span> <span class="cya">a</span> + <span class="cya">b</span>;
+  }
+  JS минава на два паса т.е. функцията може да бъде извикана преди декларацията си
+
+  <span class="org">function</span> <span class="blu">calc</span>(<span class="cya">a</span>=<span class="red">1</span>, <span class="cya">b</span>=<span class="red">3</span>){
+    <span class="org">return</span> <span class="cya">a</span> + <span class="cya">b</span>;
+  }
+  <span class="blu">calc</span>();      <span class="grn">// това връща 4</span>
+  <span class="blu">calc</span>(<span class="red">2</span>);     <span class="grn">// това връща 5</span>
+  <span class="blu">calc</span>(<span class="red">4</span>, <span class="red">8</span>);  <span class="grn">// това връща 12</span>
+  в този пример на a и b са зададени стойности по подразбиране
+
+  <span class="org">function</span> <span class="blu">func</span>(<span class="cya">a</span>){
+    <span class="cya">d</span> = <span class="cya">a</span> || <span class="red">20</span>; <span class="grn"> // присвоява на d стойността на a или 20 (ако а е undefined)</span>
+    <span class="cya">b</span> = <span class="red">5</span>; <span class="grn">       // b ще е видима само във функцията</span>
+    <span class="org">var</span> <span class="cya">c</span> = <span class="red">10</span>; <span class="grn">  // c ще e видима и извън функцията</span>
+  }
+
+  <span class="blu">(</span><span class="org">function</span>(){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="grn">"Hello!!"</span>);
+  }<span class="blu">)</span><span class="red">()</span>;
+  Анонимна функция. Червените скоби след дефиницията и я извикват
+
+  <span class="org">let</span> <span class="cya">f</span> = <span class="org">function</span>(){ <span class="grn"> // функциите могат да се дефинират и чрез фънкшън експрешън :)</span>
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="grn">'hi'</span>)
+  }
+  <span class="cya">f</span>() <span class="grn">                 // извикването на функцията може да стане само след дефиницията</span>
+
+  <span class="org">let</span> <span class="cya">x</span> = <span class="org">function</span>(){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="grn">'Здр'</span>)
+  }<span class="red">()</span>
+  функциите дефинирани с израз могат да се извикат ведна след дефинищията
+
+  <span class="org">let</span> <span class="cya">showTemp</span> = <span class="org">function</span>(<span class="cya">t</span>){
+    <span class="org">if</span>(<span class="cya">t</span><<span class="red">0</span>) <span class="org">return</span> <span class="grn">'температурата е по-малка нула'</span>;
+    <span class="org">else if</span>(<span class="cya">t</span>><span class="red">0</span>) <span class="org">return</span> <span class="grn">'температурата е по-голяма нула'</span>;
+    <span class="org">else return</span> <span class="grn">'температурата е равна на нула'</span>;
+  }
+  <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">showTemp</span>(<span class="red">5</span>))
+
+  <span class="org">let</span> <span class="cya">y</span> = <span class="org">function</span> <span class="blu">sum</span>(<span class="cya">a</span>, <span class="cya">b</span>){
+    <span class="org">return</span> <span class="cya">a</span> + <span class="cya">b</span>
+  }
+  <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">y</span>(<span class="red">5</span>, <span class="red">4</span>))
+  функцията не може да бъде извикана извън дефиницията си чрез sum
+
+  <span class="org">let</span> <span class="cya">z</span> = <span class="org">function</span> <span class="blu">sum</span>(<span class="cya">n</span>){
+   <span class="org">if</span>(<span class="cya">n</span> === <span class="red">1</span>) <span class="org">return</span> <span class="red">1</span>;
+   <span class="org">return</span> (<span class="cya">n</span> + <span class="blu">sum</span>(<span class="cya">n</span> - <span class="red">1</span>));
+  }
+  функцията sum може да се самоизвика в дефиницията си. Получава се рекурсия
+
+  <span class="org">function</span> <span class="blu">func</span>(<span class="cya">a</span>, <span class="cya">b</span>){
+    <span class="org">return</span> <span class="cya">arguments</span>.<span class="blu">length</span>;
+  }
+  връща броя на аргументите, които са получени, когато функцията е извикана
+
+  <span class="org">function</span> <span class="blu">func</span>(<span class="cya">a</span>, <span class="cya">b</span>){
+    <span class="org">return</span> <span class="cya">a</span> + <span class="cya">b</span>;
+  }
+  <span class="org">let</span> <span class="cya">txt</span> = <span class="blu">func</span>.<span class="cya">toString</span>();
+  txt получава като стойност декларацията на функцията като стринг
+
+  <span class="org">function</span> <span class="blu">factorial</span>(<span class="cya">n</span>){
+    <span class="org">if</span>((<span class="cya">n</span> === <span class="red">0</span>) || (<span class="cya">n</span> === <span class="red">1</span>)) <span class="org">return</span> <span class="red">1</span>;
+    <span class="org">return</span> (<span class="cya">n</span> * <span class="blu">factorial</span>(<span class="cya">n</span> - <span class="red">1</span>));
+  }
+  <span class="cya">console</span>.<span class="blu">log</span>(<span class="blu">factorial</span>(<span class="red">5</span>));
+
+  <span class="cya">obj</span> = <span class="cya">document</span>.<span class="blu">getElementById</span>(<span class="grn">'one'</span>);
+  <span class="cya">obj</span>.<span class="org">onclick</span> = <span class="blu">calc</span>(<span class="red">5</span>);             <span class="grn">// неправилно</span>
+  <span class="cya">obj</span>.<span class="org">onclick</span> = <span class="org">function</span>(){<span class="blu">calc</span>(<span class="red">5</span>);} <span class="grn">// правилно</span>
+  </pre>
+
+
+  <h2>Стрелкови функции</h2>
+  <p>
+    <span class="org">x</span> <span class="blu">=></span>
+    <span class="org">x</span> <span class="red">*</span> <span class="org">x</span>
+    вместо
+    <span class="blu">function</span>(<span class="org">x</span>){<span class="blu">return</span>
+    <span class="org">x</span> <span class="red">*</span> <span class="org">x</span>;}
+  </p>
+
+  <p>
+    <span class="org">(x</span>,
+    <span class="org">y)</span> <span class="blu">=></span>
+    <span class="org">x</span> <span class="red">*</span> <span class="org">y</span>
+    вместо
+    <span class="blu">function</span>(<span class="org">x</span>,
+    <span class="org">y</span>){<span class="blu">return</span>
+    <span class="org">x</span> <span class="red">*</span> <span class="org">y</span>;}
+  </p>
+
+  <p>
+    <span class="org">()</span> <span class="blu">=></span>
+    <span class="cya">Math</span>.<span class="cya">random()</span>
+    вместо
+    <span class="blu">function</span>(){<span class="blu">return</span>
+    <span class="cya">Math.random()</span>;}
+  </p>
+<pre>
+
+  <span class="org">let</span> <span class="blu">factorial</span> = (<span class="cya">n</span>) => <span class="red">{</span>
+    <span class="org">if</span>((<span class="cya">n</span> === <span class="red">0</span>) || (<span class="cya">n</span> === <span class="red">1</span>)) <span class="org">return</span> <span class="red">1</span>;
+    <span class="org">return</span> (<span class="cya">n</span> * <span class="blu">factorial</span>(<span class="cya">n</span> - <span class="red">1</span>));
+  <span class="red">}</span>
+  <span class="cya">console</span>.<span class="blu">log</span>(<span class="blu">factorial</span>(<span class="red">6</span>));
+  Ако дефиницията на функцията е на повече от един ред фигурните скоби са задължителни
+</pre>
+
+  <h2>Callback функции</h2>
+  <p>Колбек функция е функция предадена като параметър на друга функция</p>
+<pre>
+  <span class="org">function</span> <span class="blu">first</span>(<span class="cya">f</span>){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="red">1</span>);
+    <span class="cya">f</span>();
+  }
+
+  <span class="org">function</span> <span class="blu">second</span>(<span class="cya">s</span>, <span class="cya">b</span>){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">s</span> * <span class="cya">b</span>);
+  }
+
+  <span class="blu">first</span>(<span class="org">function</span>(){
+    <span class="blu">second</span>(<span class="red">4</span>, <span class="red">6</span>);
+  });
+</pre>
+
+
+
+  <h2>Масиви</h2>
+  <p>
+    <span class="org">var</span> <span class="cya">arr</span> = <span class="org">[]</span>;
+    - декларира масив (в този пример празен масив)
+  </p>
+  <p>
+    <span class="org">let</span> <span class="cya">arr</span> =
+    <span class="org">[</span><span class="red">2</span>, <span class="grn">'asd'</span>,
+    [<span class="blu">{</span><span class="cya">name</span>: <span class="grn">'Pesho'</span>;
+    <span class="cya">age</span>: <span class="red">25</span><span class="blu">}</span>,
+    <span class="red">3</span>], <span class="red">23</span><span class="org">]</span>;
+    - деклариране и инициализиране
+  </p>
+
+  <h2>Свойства и методи на масивите</h2>
+  <p><span class="org">var</span> <span class="cya">arr</span> =
+     <span class="org">[</span><span class="grn">'Нар'</span>, <span class="grn">'Ягода'</span>,
+     <span class="grn">'Круша'</span>, <span class="grn">'Ябълка'</span><span class="org">]</span>
+  </p>
+
+  <p>
+    <span class="org">let</span> <span class="cya">a</span> =
+    <span class="cya">arr</span><span class="org">[<span class="red">0</span>]</span>
+    - присвоява на <span class="cya">a</span> стойността на първия елемент
+    на масива т.е.<span class="grn">'Нар'</span>
+  </p>
+
+  <p>
+    <span class="cya">arr</span><span class="org">[<span class="red">1</span>]</span> =
+    <span class="grn">'Малина'</span>
+    - присвоява на втория елемент на масива стойността <span class="grn">'Малина'</span>
+  </p>
+
+  <p>
+    <span class="cya">arr</span>.<span class="org">length</span>
+    - връща <span class="red">4</span> - дължината на масива (т.е броят на елементите на масива)
+  </p>
+  <p>
+    <span class="cya">arr</span><span class="org">[<span class="cya">arr</span>.<span class="org">length</span>
+    <span class="red">- 1</span>]</span>
+    - връща <span class="grn">'Ябълка'</span> т.е. стойността на последния елемент на масива
+  </p>
+
+  <p>
+    <span class="cya">arr</span>.<span class="org">pop()</span>
+    - премахва последния елемент на масива
+  </p>
+
+  <p>
+    <span class="org">let</span> <span class="cya">b</span> =
+    <span class="cya">arr</span>.<span class="org">pop()</span>
+    - премахва последния елемент от масива и присвоява стойността му на
+    <span class="cya">b</span>
+  </p>
+
+  <p>
+    <span class="cya">arr</span>.<span class="org">push(<span class="grn">'Киви'</span>)</span>
+    - добавя елемент със стойност <span class="grn">'Киви'</span> в края на масива
+  </p>
+
+  <p>
+    <span class="cya">arr</span>.<span class="org">shift()</span>
+    - премахва първия елемент на масива
+  </p>
+
+  <p>
+    <span class="org">let</span> <span class="cya">c</span> =
+    <span class="cya">arr</span>.<span class="org">shift()</span>
+    - премахва първия елемент от масива и присвоява стойността му на
+    <span class="cya">c</span>
+  </p>
+
+  <p>
+    <span class="cya">arr</span>.<span class="org">unshift(<span class="grn">'Касис'</span>)</span>
+    - добавя елемент със стойност <span class="grn">'Касис'</span> в началото на масива
+  </p>
+
+
+<h2>Обхождащи методи на масивите чрез стрелкови функции</h2>
+
+<p>
+  <span class="org">let</span> <span class="cya">brr</span> =
+  <span class="org"></span>[<span class="red">2</span>, <span class="red">8</span>,
+  <span class="red">1</span>, <span class="red">5</span>, <span class="red">23</span>,
+  <span class="red">18</span>];
+</p>
+
+<p><span class="org">let</span> <span class="cya">crr</span> = [<span class="grn">'1'</span>,
+   <span class="grn">'-10'</span>, <span class="grn">'15'</span>,
+   <span class="grn">'20'</span>, <span class="grn">'-5'</span>, <span class="grn">'8'</span>,
+   <span class="grn">'14'</span>];
+</p>
+
+
+<p>
+  <span class="cya">brr</span>.<span class="org">map</span>(<span class="cya">element</span>
+  <span class="org">=></span> <span class="cya">element</span>
+  <span class="red">*=</span> <span class="grn">2</span>)<br>
+  - връща [4, 16, 2, 10, 46, 36] т.е копие на масива с удвоени стойности
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">map</span>((<span class="cya">element</span>,
+  <span class="cya">index</span>) <span class="org">=></span>
+  <span class="cya">element</span> <span class="red">+</span> <span class="cya">index</span>)<br>
+  - връща [2, 9, 3, 8, 27, 23] копие на масива с елементи, към които е добавен индекса
+</p>
+
+<p>
+  <span class="cya">crr</span>.<span class="org">map</span>(<span class="cya">element</span>
+  <span class="org">=></span>
+  <span class="blu">parseInt</span>(<span class="cya">element</span>))<br>
+  - връща копие на crr с елементи от числов тип
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">forEach</span>(<span class="cya">element</span>
+  <span class="org">=></span>
+  <span class="blu">console.log</span>(<span class="cya">element</span>))<br>
+  - извежда елементите на масива в конзолата на отделни редове
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">forEach</span>((<span class="cya">element</span>,
+  <span class="cya">i</span>) <span class="org">=></span>
+  <span class="blu">console.log</span>(<span class="cya">i</span>))<br>
+  - на отделни редове в конзолата извежда стойността на итератора при всяка стъпка
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">filter</span>(<span class="cya">element</span>
+  <span class="org">=></span> <span class="cya">element</span>
+  <span class="red">%</span> <span class="grn">2</span>
+  <span class="red">==</span> <span class="grn">0</span>)<br>
+  - връща [2, 8, 18] т.е. копие на масива с елементи, които отговарят на условието
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">every</span>(<span class="cya">element</span>
+  <span class="org">=></span> <span class="cya">element</span>
+  <span class="red">%</span> <span class="grn">2</span>
+  <span class="red">==</span> <span class="grn">0</span>)<br>
+  - връща true, ако всеки елелемент на brr отговаря на условието или brr e празен масив
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">some</span>(<span class="cya">element</span>
+  <span class="org">=></span> <span class="cya">element</span>
+  <span class="red">></span> <span class="grn">0</span>)<br>
+  - връща false, ако нито един елелемент на brr не отговаря на условието или brr е празен
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">reduce</span>((<span class="cya">acc</span>,
+  <span class="cya">element</span>) <span class="org">=></span>
+  <span class="cya">acc</span> <span class="red">+</span> <span class="cya">element</span>)<br>
+  - връща 57 т.е. сумата от елементите на масива
+</p>
+
+<p>
+  <span class="cya">brr</span>.<span class="org">reduce</span>((<span class="cya">acc</span>,
+  <span class="cya">element</span>) <span class="org">=></span>
+  <span class="cya">acc</span> <span class="red">+</span> <span class="cya">element</span>,
+  <span class="grn">100</span>)<br>
+  - връща 157 т.е. сумата от елементите на масива + 100 - началната стойност на acc
+</p>
+
+<p>
+  <span class="cya">аrr</span>.<span class="org">reduceRight</span>((<span class="cya">acc</span>,
+  <span class="cya">element</span>) <span class="org">=></span>
+  <span class="cya">acc</span> <span class="red">+</span> <span class="cya">element</span>,
+  <span class="grn">100</span>)<br>
+  - като reduce, но обработва масива от дясно на ляво. Връща 100ЯбълкаКрушаЯгодаНар
+</p>
+
+
+<p>&nbsp;</p>
+
+
+
+
+<h2>Методи на String</h2>
+  <p><span class="org">let</span> <span class="cya">str</span> =
+     <span class="grn">'Някакъв текст за онагледяване на примерите с методите на класа String'</span></p>
+  <p><span class="org">let</span> <span class="cya">len</span> =
+     <span class="cya">str</span>.<span class="org">length</span>
+     - връща дължината на стринга</p>
+  <p><span class="cya">str</span>.<span class="org">indexOf</span>(<span class="grn">'на'</span>)
+     - връща индекса на първото съвпадение или -1 ако няма съвпадения</p>
+  <p><span class="cya">str</span>.<span class="org">indexOf</span>(<span class="grn">'на'</span>, <span class="red">10</span>)
+     - като indexOf, но търсенето започва от позиция 10</p>
+  <p><span class="cya">str</span>.<span class="org">lastIndexOf</span>(<span class="grn">'на'</span>)
+     - връща индекса на последното съвпадение или -1 ако няма съвпадения</p>
+  <p><span class="cya">str</span>.<span class="org">lastIndexOf</span>(<span class="grn">'на'</span>, <span class="red">12</span>)
+     - търсенето започва от позиция 12 към началото на стринга</p>
+  <p><span class="cya">str</span>.<span class="org">search</span>(<span class="grn">'за'</span>)
+     - </p>
+
+         The search() method cannot take a second start position argument.
+         The indexOf() method cannot take powerful search values (regular expressions).
+         There are 3 methods for extracting a part of a string:
+
+             slice(start, end)
+             substring(start, end)
+             substr(start, length)
+src="https://www.youtube.com/embed/7mDdEKA_kvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-pictur?autoplay=1" allowfullscreen>
+
+<h2>Събития</h2>
+<pre>
+  <span class="org">let</span> <span class="cya">obj</span> = <span class="red">document</span>.<span class="blu">getElementById</span>(<span class="grn">'one'</span>)
+  <span class="cya">obj</span>.<span class="org">onclick</span> = <span class="blu">function</span>(){
+    <span class="blu">this</span>.<span class="org">style</span>.<span class="cya">backgroundColor</span> = <span class="grn">'red'</span> ;
+  }
+</pre>
+<br>
+<p><span class="org">.ondblclick</span> - настъпва при двоен клик</p>
+<p><span class="org">.oncontextmenu</span> - настъпва при кликане на десен бутон<p>
+<p><span class="org">.onmouseover</span> - настъпва при поставяне на курсора върху обекта<p>
+<p><span class="org">.onmouseenter</span> - като onmouseover<p>
+<p><span class="org">.onmouseout</span> - настъпва при излизане на курсора от обекта</span><p>
+<p><span class="org">.onmouseleave</span> - като onmouseout</span><p>
+<p><span class="org">.onmousemove</span> - настъпва при движение на курсора върху обекта</span><p>
+<p><span class="org">.onmousedown</span> - настъпва при натискане на бутон</span><p>
+<p><span class="org">.onmouseup</span> - настъпва при натискане на бутон</span><p>
+<br>
+<pre>
+  <span class="cya">obj</span>.<span class="org">onmousedown</span> = <span class="blu">function</span>(<span class="cya">event</span>){
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">event</span>.<span class="blu">button</span>);
+    <span class="cya">console</span>.<span class="blu">log</span>(<span class="cya">event</span>.<span class="blu">which</span>);
+  }
+</pre>
+
+<h2>Колекции</h2>
+  a = document.getElementById('id') - връша само един елемент
+  b = document.getElementByTagName('tagName') - връща масив
+  c = document.getElementByClassName('className') - връша масив
+
+<h2>Обекти</h2>
+<p><span class="org">let</span> <span class="cya">person</span> =
+   {<span class="blu">fname</span>:<span class="grn">"John"</span>,
+   <span class="blu">lname</span>:<span class="grn">"Doe"</span>,
+   <span class="blu">age</span>:<span class="red">25</span>,
+   <span class="blu">say</span>:<span class="blu">function</span>{<span class="org">return</span> <span class="grn">'Hello'</span>}};</p>
+<p>Ако се използва веднъж например глобален config за сайта, може да се обяви в кода</p>
+<p>Може динамично да се създават свойства на обект "кривой способ" :(</p>
+
+
+<h2>Класове</h2>
+<pre>
+  <span class="org">class</span> <span class="blu">Cat</span>{
+    <span class="org">constructor</span>(<span class="cya">length</span>, <span class="cya">age</span>){
+      <span class="org">this</span>.<span class="blu">length</span> = <span class="cya">length</span>;
+      <span class="org">this</span>.<span class="blu">age</span> = <span class="cya">age</span>;
+    }
+    <span class="blu">eat</span>(){
+      <span class="cya">console</span>.<span class="blu">log</span>(<span class="grn">"Ам-ам"</span>)
+    }
+    <span class="blu">getHeight</span>(){
+      <span class="cya">return</span> <span class="org">this</span>.<span class="blu">length</span> / <span class="red">2</span>
+    }
+  }
+</pre>
+
+<h2>Типове данни</h2>
+<p><span class="red">Number</span></p>
+<p><span class="grn">String</span> - стрингове</p>
+<p><span class="cya">Boolean</span></p>
+<p>
+  <span class="blu">object</span>
+  <ul>
+    <li><span class="org">array</span></li>
+    <li><span class="org">function</span></li>
+  </ul>
+</p>
+<p>null</p>
+<p>undefined</p>
+<p>---</p>
+<p>undefined - променливата е декларирана, но не инициализирана</p>
+<p>not defined - променливата не е декларирана т.е. въобще не е създадена</p>
+
+
+
+
+<h2>Връзки</h2>
+
+<p><a href="https://www.youtube.com/watch?v=u6Cv--A7m5k" target="_blank">
+  <span class="blu">Стрелочные функции</span></a> от
+  <a href="https://www.youtube.com/channel/UCEBHlT_L1ME6e9ixaRPp0wg" target="_blank">
+  <span class="fnc">.getInstance</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=4o0uZR0-nnQ" target="_blank">
+   <span class="blu">Ключевые слова var, let и const</span></a> от
+   <a href="https://www.youtube.com/channel/UCEBHlT_L1ME6e9ixaRPp0wg" target="_blank">
+   <span class="fnc">.getInstance</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=0nfvdgMPHZc" target="_blank">
+   <span class="blu">Курс JavaScript - Методы Массивов</span></a> от
+   <a href="https://www.youtube.com/channel/UCiw2l9SNahEtu14V7r9XMgg" target="_blank">
+   <span class="fnc">WebUpBlog - Уроки веб разработки</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=cGA3N5coak4" target="_blank">
+  <span class="blu">forEach, filter, map, every, some, reduce, reduceRight
+  методы перебора</span></a> от
+  <a href="https://www.youtube.com/channel/UC33CqCsFPEHuwhpaES7ORpQ" target="_blank">
+  <span class="fnc">Дмитрий Лаврик</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=CzY9Oc2Ap2k&list=PLM7wFzahDYnFjBTkfRTRlusyp_tlZ9rYz&index=29" target="_blank">
+  <span class="blu">Работаем с элементами и классами</span></a> от
+  <a href="https://www.youtube.com/channel/UCP-xJwnvKCGyS-nbyOx1Wmg" target="_blank">
+  <span class="fnc">WebDev</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=Gpvw-lfVSwg&list=PLM7wFzahDYnEcQh1G_fxFXBZ4O1tlVsDG&index=24" target="_blank">
+  <span class="blu">Callback функции (True JS урок 24)</span></a> от
+  <a href="https://www.youtube.com/channel/UCP-xJwnvKCGyS-nbyOx1Wmg" target="_blank">
+  <span class="fnc">WebDev</span></a></p>
+
+<p><a href="https://puzzleweb.ru/javascript/20_recursiya.php" target="_blank">
+  <span class="blu">JavaScript: Рекурсия</span></a> от
+  <a href="https://puzzleweb.ru/" target="_blank">
+  <span class="fnc">puzzleweb.ru</span></a></p>
+
+<p><a href="https://www.youtube.com/watch?v=SRM7PYjKuGo&list=PLM7wFzahDYnFnw7aZfmhlpmflYa_Z98sF" target="_blank">
+  <span class="blu">JavaScript Canvas 1. Основы canvas</span></a> от
+  <a href="https://www.youtube.com/channel/UCP-xJwnvKCGyS-nbyOx1Wmg" target="_blank">
+  <span class="fnc">WebDev</span></a></p>
+
+<br>
+
+
+
+<details>
+  <summary>подробности</summary>
+
+  <h2>типове данни</h2>
+  <p>
+    <span class="org">let</span> <span class="cya">types</span> =
+    [<span class="grn">'strf'</span>, <span class="red">5</span>,
+    <span class="red">5.2</span>, <span class="cya">true</span>,
+    <span class="blu">null</span>, <span class="org">[]</span>, <span class="blu">{}</span>];
+  </p>
+  <p>
+    <span class="org">let</span> <span class="cya">mapped</span> =
+    <span class="cya">brr</span>.<span class="org">map</span>(<span class="blu">function</span>(<span class="cya">element</span>)<span class="blu">{</span><br/>
+    &nbsp;&nbsp;&nbsp;<span class="org">return</span>
+    <span class="cya">element</span> *= <span class="red">2</span>;<br/>
+    <span class="blu">}</span>);<br>
+    - връща [4, 16, 2, 10, 46, 36] т.е копие на масива с удвоени стойности
+  </p><br>
+
+  <p>
+    <span class="org">let</span> <span class="cya">mapped</span> =
+    <span class="cya">brr</span>.<span class="org">map</span>(<span class="blu">function</span>(<span class="cya">element</span>,
+    <span class="cya">index</span>)<span class="blu">{</span><br/>
+    &nbsp;&nbsp;&nbsp;<span class="org">return</span>
+    <span class="cya">element</span> += <span class="cya">index</span>;<br/>
+    <span class="blu">}</span>);<br>
+    - връща [2, 9, 3, 8, 27, 23] копие на масива с елементи, към които е добавен индекса
+  </p><br>
+
+  <p>
+    <span class="org">let</span> <span class="cya">filtered</span> =
+    <span class="cya">brr</span>.<span class="org">filter</span>(<span class="blu">function</span>(<span class="cya">element</span>)<span class="blu">{</span><br/>
+    &nbsp;&nbsp;&nbsp; <span class="org">return</span>
+    <span class="cya">element</span> % <span class="red">2</span> == <span class="red">0</span>;<br/>
+    <span class="blu">}</span>);<br>
+    - връща [2, 8, 18] т.е. копие на масива с елементи, които отговарят на условието
+  </p><br/>
+
+  <p><span class="cya">brr</span>.<span class="org">reduce</span>()
+     - свежда работата с масива към една стойност
+  </p>
+
+  <p>
+    <span class="org">let</span> <span class="cya">reduced</span> =
+    <span class="cya">brr</span>.<span class="org">reduce</span>(<span class="blu">function</span>(<span class="cya">acc</span>,
+    <span class="cya">element</span>, <span class="cya">index</span>, <span class="cya">array</span>)<span class="blu">{</span><br/>
+    &nbsp;&nbsp;&nbsp; <span class="org">return</span>
+    <span class="cya">acc</span> + <span class="cya">element</span>;<br>
+    <span class="blu">}</span>);<br>
+    - връща <span class="red">57</span> т.е. сумата от елементите на масива
+  </p>
+
+
+</details>
+<details>
+  <summary>обекти</summary>
+  <h2>Пример за обект</h2>
+  <p>
+    <span class="org">let</span> <span class="cya">cat</span> = <span class="blu">{</span>
+      <div class="ml50">
+        <span class="cya">length</span>: <span class="red">0.5</span>,<br>
+        <span class="cya">weight</span>: <span class="red">5</span>,<br>
+        <span class="cya">age</span>: <span class="red">6</span>,<br>
+        <span class="cya">color</span>: <span class="grn">'white'</span>,<br>
+        <span class="blu">tail</span>: {
+        <div class="ml50">
+          <span class="cya">length</span>: <span class="red">0.2</span>,<br>
+          <span class="cya">color</span>: <span class="grn">'black'</span>,
+        </div>
+        }<br>
+        <span class="blu">getVoice</span>: <span class="org">function</span>()<span class="blu">{</span>
+        <div class="ml50">
+          <span class="org">return</span>: <span class="grn">'Мяу'</span>;
+        </div>
+        <span class="blu">}</span>,<br>
+        <span class="blu">eat</span>: <span class="org">function</span>(){
+        <div class="ml50">
+          <span class="org">return</span>: <span class="grn">'Ам-мър'</span>;
+        </div>
+        };>
+      </div>
+    <p><span class="blu">}</span></p>
+  </p>
+</details>
+
+</body>
+</html>

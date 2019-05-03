@@ -19,6 +19,138 @@
     <li>Цъкаш на <span class="blu">mariadb-10.3.10-winx64.zip</span></li>
     <li>Цъкаш на бутона <span class="org">just download</span></li>
   </ol>
+  <p>или</p>
+  <ol>
+    <li>Отиваш на
+      <a href="https://www.apachefriends.org/index.html" target="_blank">
+        https://www.apachefriends.org/index.html</a>
+    </li>
+    <li>Цъкаш на <span class="org">Download for Widows</span></li></li>
+    <li>Инсталираш XAMPP</li>
+    <li>Настройваш PATH за mariaDB</li>
+    <li>Стартираш mysql сървъра</li>
+  </ol>
+
+<h2>Работа с mariaDB през конзолата</h2>
+<p>C:\><span class="org">mysql</span> - влизаш в mariaDB без паралола</p>
+<p> MariaDB [(none)]> <span class="org">SHOW DATABASES</span><span class="red">;</span></p>
+<pre>
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
++--------------------+
+</pre><br/>
+
+<p>
+  C:\><span class="org">mysql -u <span class="grn">root</span> -p</span>
+  - влизаш в mariaDB
+</p>
+<p>Enter password: ****</p>
+<p>Welcome to the MariaDB monitor.</p>
+<p> MariaDB [(none)]> <span class="org">SHOW DATABASES</span><span class="red">;</span></p>
+<pre>
++--------------------+
+| Database           |
++--------------------+
+| create             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phonebook          |
+| phpmyadmin         |
+| session_exercise   |
+| tasks              |
+| xmas               |
+| xmas1              |
++--------------------+
+</pre><br/>
+<p>MariaDB [(none)]> <span class="org">USE <span class="grn">xmas</span></span><span class="red">;</span></p>
+<p>Database changed</p>
+<p>MariaDB [xmas]> <span class="org">SHOW TABLES</span>;</p>
+<pre>
++----------------+
+| Tables_in_xmas |
++----------------+
+| containers     |
+| days           |
+| gifts          |
+| kids           |
+| presents       |
++----------------+
+5 rows in set (0.00 sec)
+</pre><br/>
+<p>
+  MariaDB [xmas]> <span class="org">CREATE DATABASE IF NOT EXISTS
+  <span class="grn">xmas2018</span> COLLATE <span class='fnc'>'utf8_general_ci'</span></span>;
+</p>
+<p>MariaDB [xmas]> <span class="org">USE <span class="grn">xmas2018</span></span>;</p>
+<p>MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS
+   <span class="grn">persons</span>(</p>
+<p style="padding-left: 260px;"><span class="grn">id</span>
+   <span class="org">int(<span class="grn">1</span>)</span>
+   <span class="fnc">NOT NULL</span> <span class="blu">AUTO_INCREMENT</span>
+   <span class="red">PRIMARY KEY</span>,
+ </p>
+<p style="padding-left: 260px;"><span class="grn">name</span>
+  <span class="org">varchar(<span class="grn">20</span>)</span>
+  <span class="fnc">NOT NULL</span>,
+</p>
+<p style="padding-left: 260px;"><span class="grn">notes</span>
+  <span class="org">varchar(<span class="grn">200</span>))</span>;
+</p>
+<p style="font-style: italic;">Query OK, 0 rows affected (0.05 sec)</p><br/>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">INSERT INTO <span class="grn">persons</span>
+  (<span class="grn">name</span>, <span class="grn">notes</span>) VALUES</span>
+</p>
+<div style="padding-left: 260px;">
+<p>(<span class="grn">'Татко'</span>, <span class="grn">'цар и на къщата господар'</span>),</p>
+<p>(<span class="grn">'Мама'</span>, <span class="grn">'Най-добрата на света'</span>),</p>
+<p>(<span class="grn">'Батко'</span>, <span class="grn">'помощникът на татко'</span>),</p>
+<p>(<span class="grn">'Кака'</span>, <span class="grn">'много е доричка и всички ни обича'</span>),</p>
+<p>(<span class="grn">'Мишо'</span>, <span class="grn">'сладуранчо и глезанчо'</span>),</p>
+<p>(<span class="grn">'Дядо'</span>, <span class="grn">'дядо белобради градина дето сади'</span>),</p>
+<p>(<span class="grn">'Баба'</span>, <span class="grn">'Най-добрата на света'</span>);</p>
+</div>
+<p style="font-style: italic;">
+Query OK, 7 rows affected (0.01 sec)<br>
+Records: 7  Duplicates: 0  Warnings: 0</p><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS <span class="grn">presents</span>
+  (<span class="grn">name</span>, <span class="grn">notes</span>) VALUES</span>
+</p>
+<div style="padding-left: 260px;"> <p><span class="grn">id</span>
+  <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>
+  <span class="blu">AUTO_INCREMENT</span> <span class="red">PRIMARY KEY</span>,</p>
+  <p>notes varchar(255) <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">type</span> <span class="org">int(<span class="grn">1</span>)</span> <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">day</span> <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>);</p>
+</div>
+<br>
+<p>
+  MariaDB [xmas2018]> <span class="org">ALTER TABLE</span> <span class="grn">presents</span>
+  <span class="org">ADD COLUMN</span> <span class="grn">container</span>
+  <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>
+  <span class="org">AFTER</span> <span class="grn">day</span>;
+</p>
+<br>
+<p>
+  MariaDB [xmas2018]> <span class="org">UPDATE</span> <span class="grn">presents</span>
+  <span class="org">SET</span> <span class="grn">day</span>=<span class="grn">25</span>
+  <span class="org">WHERE</span> <span class="grn">id</span> <span class="fnc">IN</span>
+  (<span class="grn">4</span>, <span class="grn">5</span>, <span class="grn">7</span>,
+  <span class="grn">24</span>, <span class="grn">25</span>, <span class="grn">27</span>);
+</p>
+
+
+
+
+
+
+
 <h2>CRUD - create read update delete</h2>
   <pre>
   </pre>
@@ -43,5 +175,12 @@
      <span class="org">WHERE</span> col = <span class="val">'value'</span>
   </pre>
 
+<h1>Линкове</h1>
+<p><a href="https://www.youtube.com/watch?v=UtOobJjygtE&list=PLM7wFzahDYnFRgw8G9UYOEdrS6SNSPhNW" target="_blank">
+  <span class="blu">MySQL. 1. Введение</span></a> от
+  <a href="https://www.youtube.com/channel/UCP-xJwnvKCGyS-nbyOx1Wmg" target="_blank">
+  <span class="fnc">WebDev</span></a></p>
+
+<br>
 </body>
 </html>

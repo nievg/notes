@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="notes_css.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .otstup{padding-left: 260px;}
+  </style>
+</head>
+<body>
+
+
+<h2>Работа с mariaDB през конзолата</h2>
+<p>C:\><span class="org">mysql -u <span class="grn">root</span> -p</span></p>
+<p>Enter password: ****</p>
+<br/>
+<p> MariaDB [(none)]> <span class="org">SHOW DATABASES</span><span class="red">;</span></p>
+<pre>
++--------------------+
+| Database           |
++--------------------+
+| create             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phonebook          |
+| phpmyadmin         |
++--------------------+
+</pre><br/>
+<p>
+  MariaDB [(none)]>  <span class="org">CREATE DATABASE IF NOT EXISTS
+  <span class="grn">xmas2018</span> COLLATE <span class='fnc'>'utf8_general_ci'</span></span>;
+</p><br>
+<p>MariaDB [(none)]>  <span class="org">USE <span class="grn">xmas2018</span></span>;</p><br>
+
+<p>MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS
+   <span class="grn">persons</span>(</p>
+<p style="padding-left: 260px;"><span class="grn">id</span>
+   <span class="org">int(<span class="grn">1</span>)</span>
+   <span class="fnc">NOT NULL</span> <span class="blu">AUTO_INCREMENT</span>
+   <span class="red">PRIMARY KEY</span>,
+ </p>
+<p style="padding-left: 260px;"><span class="grn">name</span>
+  <span class="org">varchar(<span class="grn">20</span>)</span>
+  <span class="fnc">NOT NULL</span>,
+</p>
+<p style="padding-left: 260px;"><span class="grn">notes</span>
+  <span class="org">varchar(<span class="grn">200</span>))</span>;
+</p><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS
+  <span class="grn">presents</span>(</p>
+<div style="padding-left: 260px;"> <p><span class="grn">id</span>
+  <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>
+  <span class="blu">AUTO_INCREMENT</span> <span class="red">PRIMARY KEY</span>,</p>
+  <p><span class="grn">notes</span> <span class="org">varchar(<span class="grn">255</span>)</span> <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">type</span> <span class="org">int(<span class="grn">1</span>)</span> <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">day</span> <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">pack</span> <span class="org">int(<span class="grn">1</span>)</span>);</p>
+</div><br>
+
+<p>MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS</span>
+   <span class="grn">types</span>(</p>
+<div style="padding-left: 260px;">
+  <p><span class="grn">id</span>
+     <span class="org">int(<span class="grn">1</span>)</span>
+     <span class="fnc">NOT NULL</span> <span class="blu">AUTO_INCREMENT</span>
+     <span class="red">PRIMARY KEY</span>,</p>
+  <p><span class="grn">type</span>
+    <span class="org">varchar(<span class="grn">20</span>)</span>
+    <span class="fnc">NOT NULL</span> <span class="blu">UNIQUE</span>);</p>
+</div><br>
+
+<p>MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS</span>
+   <span class="grn">containers</span>(</p>
+<div style="padding-left: 260px;">
+  <p><span class="grn">id</span>
+     <span class="org">int(<span class="grn">1</span>)</span>
+     <span class="fnc">NOT NULL</span> <span class="blu">AUTO_INCREMENT</span>
+     <span class="red">PRIMARY KEY</span>,</p>
+  <p><span class="grn">notes</span>
+    <span class="org">varchar(<span class="grn">255</span>)</span>
+    <span class="fnc">NOT NULL</span> <span class="blu">UNIQUE</span>);</p>
+</div><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">CREATE TABLE IF NOT EXISTS
+  <span class="grn">gifts</span>(</p>
+<div style="padding-left: 260px;"> <p><span class="grn">id</span>
+  <span class="org">int(<span class="grn">3</span>)</span> <span class="fnc">NOT NULL</span>
+  <span class="blu">AUTO_INCREMENT</span> <span class="red">PRIMARY KEY</span>,</p>
+  <p><span class="grn">person</span> <span class="org">int(<span class="grn">1</span>)</span> <span class="fnc">NOT NULL</span>,</p>
+  <p><span class="grn">present</span> <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>);</p>
+</div><br>
+
+<p>
+MariaDB [xmas2018]> <span class="org">SHOW TABLES</span>;
+<pre>
++--------------------+
+| Tables_in_xmas2018 |
++--------------------+
+| containers         |
+| gifts              |
+| persons            |
+| presents           |
+| types              |
++--------------------+
+</pre></p><br/>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">INSERT INTO
+  <span class="grn">persons</span>(<span class="grn">name</span>,
+  <span class="grn">notes</span>) VALUES</span>
+</p>
+<div style="padding-left: 260px;">
+<p>(<span class="grn">'Татко'</span>, <span class="grn">'цар и на къщата господар'</span>),</p>
+<p>(<span class="grn">'Мама'</span>, <span class="grn">'Най-добрата на света'</span>),</p>
+<p>(<span class="grn">'Батко'</span>, <span class="grn">'Помощникът на татко'</span>),</p>
+<p>(<span class="grn">'Кака'</span>, <span class="grn">'Много е добричка и всички ни обичка'</span>),</p>
+<p>(<span class="grn">'Мишо'</span>, <span class="grn">'Сладуранчо и глезанчо'</span>),</p>
+<p>(<span class="grn">'Дядо'</span>, <span class="grn">'Дядо белобради градина дето сади'</span>),</p>
+<p>(<span class="grn">'Баба'</span>, <span class="grn">'Най-добрата на света'</span>);</p>
+</div><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">INSERT INTO
+  <span class="grn">types</span>(<span class="grn">type</span>) VALUES</span>
+</p>
+<div style="padding-left: 260px;">
+  <p>(<span class="grn">'играчка'</span></span>),</p>
+  <p>(<span class="grn">'шоколад'</span>),</p>
+  <p>(<span class="grn">'дрешка'</span>),</p>
+  <p>(<span class="grn">'книжка'</span>),</p>
+  <p>(<span class="grn">'IT device'</span>),</p>
+  <p>(<span class="grn">'деликатеси'</span>);</p>
+</div><br>
+
+<p>MariaDB [xmas2018]> <span class="org">INSERT INTO</span>
+  <span class="grn">containers</span>(<span class="grn">notes</span>)
+  <span class="org">VALUES</span></p>
+<div style="padding-left: 260px;">
+  <p>(<span class="grn">'Кутия Walkmaxx червена'</span>),</p>
+  <p>(<span class="grn">'Кутия Walkmaxx зелена'</span>),</p>
+  <p>(<span class="grn">'Кашон от доставка'</span>);</p>
+</div><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">INSERT INTO</span>
+  <span class="grn">gifts</span>(<span class="grn">person</span>, <span class="grn">present</span>)
+  <span class="org">VALUES</span>
+  <div class="otstup"><p>
+    (3,1),(4,2),(3,3),(4,3),(1,4),(5,5),(5,6),(1,7),(2,7),(3,7),(4,7),<br>
+    (5,7),(2,8),(2,9),(3,10),(3,11),(1,12),(2,12),(3,12),(4,12),(5,12),<br>
+    (3,13),(1,14),(2,14),(3,14),(4,14),(5,14),(3,15),(2,15),(3,16),(4,16),<br>
+    (3,17),(2,18),(2,19),(5,20),(2,21),(3,21),(2,22),(3,22),(4,22),(3,23),<br>
+    (4,23),(2,23),(1,24),(5,25),(3,26),(4,26),(2,27),(3,28),(1,29),(2,30),<br>
+    (2,31),(1,32),(2,32),(3,32),(4,32),(5,32),(1,33),(2,33),(3,33),(4,33),<br>
+    (5,33),(1,34),(2,34),(3,34),(4,34),(5,34),(1,35),(2,35),(3,35),(4,35),<br>
+    (5,35),(3,36),(4,36),(2,37),(1,38),(2,38),(3,38),(4,38),(5,38),(1,39),<br>
+    (2,39),(3,39),(4,39),(5,39),(1,40),(2,40),(3,40),(4,40),(5,40),(1,41),<br>
+    (2,41),(3,41),(4,41),(5,41),(1,42),(2,42),(3,42),(4,42),(5,42),(1,43),<br>
+    (2,43),(3,43),(4,43),(5,43),(1,44),(2,44),(3,44),(4,44),(5,44),(1,45),<br>
+    (2,45),(3,45),(4,45),(1,46),(2,46),(3,46),(4,46),(1,47),(2,47),(3,47),<br>
+    (4,47),(1,48),(2,48),(3,48),(4,48),(1,49),(2,49),(3,49),(4,49),(4,50),<br>
+    (4,51),(3,52),(2,53),(6,54),(6,55),(6,56),(1,57),(2,58),(3,58),(4,58),<br>
+    (1,59),(1,60),(2,60),(3,60),(4,60),(5,60),(1,61),(2,61),(3,61),(4,61),<br>
+    (5,61),(1,62),(2,62),(3,62),(4,62),(5,62),(1,63),(2,63),(3,63),(4,63),<br>
+    (5,63),(1,63),(2,63),(3,63),(4,63),(5,63),(1,64),(2,64),(3,64),(4,64),<br>
+    (5,64),(1,65),(2,65),(3,65),(4,65),(5,65),(3,66),(4,67),(5,68),(2,69),<br>
+    (2,69),(7,70);
+    </p>
+  </div></p><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">ALTER TABLE</span> <span class="grn">presents</span>
+  <span class="org">ADD COLUMN</span> <span class="grn">container</span>
+  <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>
+  <span class="org">AFTER</span> <span class="grn">day</span>;
+</p><br>
+
+<p>
+  MariaDB [xmas2018]> <span class="org">ALTER TABLE</span> <span class="grn">presents</span>
+  <span class="org">CHANGE COLUMN</span> <span class="grn">container cont</span>
+  <span class="org">int(<span class="grn">2</span>)</span> <span class="fnc">NOT NULL</span>;
+</p><br>
+
+
+<p>
+  MariaDB [xmas2018]> <span class="org">UPDATE</span> <span class="grn">presents</span>
+  <span class="org">SET</span> <span class="grn">day</span>=<span class="grn">25</span>
+  <span class="org">WHERE</span> <span class="grn">id</span> <span class="fnc">IN</span>
+  (<span class="grn">4</span>, <span class="grn">5</span>, <span class="grn">7</span>,
+  <span class="grn">24</span>, <span class="grn">25</span>, <span class="grn">27</span>);
+</p><br>
+
+<p>MariaDB [xmas2018]> <span class="org">SELECT
+  <span class="red">name</span>, <span class="grn">notes</span>
+  FROM <span class="blu">gifts</span></span>
+  <div class="otstup">
+    <p><span class="org">INNER JOIN <span class="red">kids</span> ON
+       <span class="red">kids</span>.<span class="red">id</span>=<span class="blu">gifts</span>.<span class="blu">kid</span></p>
+    <p><span class="org">INNER JOIN <span class="grn">presents</span> ON
+       <span class="grn">presents</span>.<span class="grn">id</span>=<span class="blu">gifts</span>.<span class="blu">present</span>;</p>
+  </div><br>
+</p>
+
+
+<p>
+  MariaDB [xmas2018]> <span class="org">SELECT</span>
+  <span class="grn">name</span>, <span class="grn">notes</span>
+  <span class="org">FROM</span> <span class="grn">gifts</span>
+  <span class="blu">AS</span> <span class="grn">gf</span>
+  <div class="otstup"><p>
+    <span class="org">INNER JOIN</span> <span class="grn">kids</span>
+    <span class="blu">AS</span> <span class="grn">kd</span> <span class="blu">ON</span>
+    <span class="grn">kd</span>.<span class="grn">id</span>=<span class="grn">gf</span>.<span class="grn">kid</span>
+    </p><p>
+    <span class="org">INNER JOIN</span> <span class="grn">presents</span>
+    <span class="blu">AS</span> <span class="grn">pr</span> <span class="blu">ON</span>
+    <span class="grn">pr</span>.<span class="grn">id</span>=<span class="grn">gf</span>.<span class="grn">present</span>;
+    </p>
+  </div>
+</p><br>
+
+<!--
+CREATE TABLE IF NOT EXISTS presents(
+id int(2) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+notes varchar(255) NOT NULL,
+type int(1) NOT NULL,
+day int(2) NOT NULL,
+cont int(1),
+pack int(1));
+
+
+INSERT INTO presents(notes, type, day, cont, pack) VALUES
+('Детски комплект за хранене - син'      , 1, 31, 2, 1),
+('Детски комплект за хранене - розов'    , 1, 25, 2, 1),
+('Игра Кокошка и яйчица'                 , 1, 27, 4, 1),
+('64GB microsd, слушалки-тапи + гумички' , 5, 25, 1, 1),
+('microSD 256 GB Samsung EVO PLUS U3'    , 5, 25, 1, 1),
+('Калъф за Samsung Galaxy S9+ Alcantara' , 5, 25, 1, 1),
+('аеро шоколадче'                        , 2, 25, 1, 1),
+('Слушалки за бати'                      , 5, 27, 3, 1),
+('Флашка 16 GB за бати'                  , 5, 28, 1, 1),
+('Конструктор фадрома'                   , 1, 30, 1, 1),
+('Конструктор автокран'                  , 1, 29, 1, 1),
+('Бонбони "Линдор"'                      , 2, 27, 2, 1),
+('Конструктор лодка'                     , 1, 26, 2, 1),
+('Шоколад "Линдор"'                      , 2, 27, 1, 1),
+('Конструктор подводница'                , 1, 27, 3, 1),
+('Игра "Котенце и мишка"'                , 1, 25, 4, 1),
+('Книжка "Тих бял Дунав"'                , 4, 28, 1, 1),
+('Слушалки за бати'                      , 5, 29, 3, 1),
+('Масичка за лаптоп'                     , 5, 26, 0, 1),
+('Безжично зарядно'                      , 5, 25, 1, 1),
+('Лодка с дистанционно'                  , 1, 25, 0, 1),
+('Конструктор - магнитен'                , 1, 26, 2, 1),
+('Влакче дървено'                        , 1, 25, 3, 1),
+('Батерия за кака'                       , 5, 25, 1, 1),
+('Samsung Gallaxy S9+'                   , 5, 25, 1, 1),
+('Мемо игра'                             , 1, 28, 2, 1),
+('Клавиатура безжична'                   , 5, 25, 0, 1),
+('Клин за Ники'                          , 3, 25, 2, 1),
+('Спрей за разресване'                   , 3, 25, 2, 1),
+('чорапи'                                , 3, 29, 2, 1),
+('За бати от Ники'                       , 4, 25, 2, 1),
+('Schogetten с лешников крем'            , 2, 26, 2, 1),
+('бонбони топчета'                       , 2, 31, 2, 1),
+('Schogetten млечен'                     , 2, 28, 2, 1),
+('Бонбони Мориц'                         , 2, 26, 2, 1),
+('Книжка "Гъбена чорбица"'               , 4, 25, 1, 0),
+('Чорапи за Иоан'                        , 3, 25, 3, 1),
+('Schogetten white'                      , 2, 29, 2, 1),
+('Schogetten Tiramisu'                   , 2, 30, 2, 1),
+('Schogetten Caramel'                    , 2, 25, 2, 1),
+('Schogetten Strawberry'                 , 2, 28, 1, 1),
+('Schogetten Latte Macchiato'            , 2, 26, 2, 1),
+('Schogetten For kids'                   , 2, 25, 2, 1),
+('Schogetten Trilogia'                   , 2, 25, 2, 1),
+('Книга "Светецът светкавица"'           , 4, 27, 3, 1),
+('Свети Серафим Саровски'                , 4, 26, 3, 1),
+('Шоколадови талери'                     , 2, 25, 3, 1),
+('Шоколадови шишарки'                    , 2, 25, 3, 1),
+('Шоколадови топки'                      , 2, 25, 3, 1),
+('Конструктор MC конче'                  , 1, 25, 3, 1),
+('MC зомби прасе'                        , 1, 26, 3, 1),
+('MC скелет'                             , 1, 26, 3, 1),
+('MC момиче диамантена броня'            , 1, 26, 3, 1),
+('Филе "Елена"'                          , 6, 25, 4, 0),
+('Колбас "Бански старец"'                , 6, 25, 4, 0),
+('Печено телешко на слайсове'            , 6, 25, 4, 0),
+('Пудра срещу акне'                      , 6, 25, 3, 1),
+('Мемо игра с флагове'                   , 1, 31, 3, 1),
+('Книжка от бати за кака'                , 4, 25, 3, 1),
+('Fin carre White'                       , 2, 25, 3, 1),
+('Fin carre Milk'                        , 2, 26, 3, 1),
+('Fin carre Dark'                        , 2, 27, 3, 1),
+('Fin carre Dark++'                      , 2, 26, 3, 1),
+('Diary milk fruit+nut'                  , 2, 27, 3, 1),
+('Diary milk fruit+nut'                  , 2, 28, 3, 1),
+('Чорапи'                                , 3, 29, 3, 1),
+('Чорапи'                                , 3, 29, 3, 1),
+('Кабел type-C'                          , 5, 25, 1, 1),
+('Дървено руби кубче'                    , 1, 29, 3, 1),
+('Календар'                              , 4, 25, 3, 0),
+('За Бати от Ники'                       , 1, 25, 3, 1);
+<pre>
+MariaDB [xmas2018]> SHOW TABLES;
++--------------------+
+| Tables_in_xmas2018 |
++--------------------+
+| containers         |
+| gifts              |
+| kids               |
+| presents           |
+| types              |
++--------------------+
+</pre>
+<pre>
+MariaDB [xmas2018]> EXPLAIN presents;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(2)       | NO   | PRI | NULL    | auto_increment |
+| notes | varchar(255) | NO   |     | NULL    |                |
+| type  | int(1)       | NO   |     | NULL    |                |
+| day   | int(2)       | NO   |     | NULL    |                |
+| cont  | int(1)       | YES  |     | NULL    |                |
+| pack  | int(1)       | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+</pre>
+
+-->
+</body>
+</html>

@@ -53,6 +53,8 @@ summary.links{
   color: #ddd;
   margin-top: 30px;
 }
+.ml50{margin-left: 50px; font-size: 24px; border: 0px solid red;}
+
 
 .prop{color: #d19a66; font-weight: bold;}
 .var {color: #abb2bf;}
@@ -74,3 +76,6 @@ summary.links{
 .vio {color: #bf66bf;} #bf00bf
 .ylw {color: #bfbf00;}
 .grn2{color: #66cf66;}
+
+
+.bcya{background: #56b6c2; color:#333;}
